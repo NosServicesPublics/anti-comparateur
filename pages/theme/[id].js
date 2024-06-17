@@ -8,6 +8,28 @@ import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export function getStaticPaths() {
+  return fetch(
+    "https://nosservicespublics.getgrist.com/api/docs/hXBbY6ngk5ik/tables/Thematiques/records",
+  )
+    .then((r) => r.json())
+    .then((r) => r.records)
+    .then((records) => {
+      return {
+        paths: records.map((r) => {
+          return { params: { id: r.fields.Nom_technique } };
+        }),
+        fallback: true,
+      };
+    });
+
+  return { paths: [{ params: { id: "education" } }], fallback: true };
+}
+
+export function getStaticProps() {
+  return { props: {} };
+}
+
 export default function Home() {
   const router = useRouter();
 
