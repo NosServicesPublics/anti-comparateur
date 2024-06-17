@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 
 import { useState, useEffect } from "react";
@@ -28,12 +29,12 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         {themes?.map((theme) => {
           return (
-            <a
+            <Link
               key={theme.fields.Nom_technique}
               href={`/theme/${theme.fields.Nom_technique}`}
             >
               {theme.fields.Nom} ({theme.fields.Nombres_de_questions} questions)
-            </a>
+            </Link>
           );
         })}
         <a href="a-propos">À propos (TODO)</a>
