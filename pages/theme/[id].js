@@ -53,11 +53,11 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <h1>{thematique?.fields.Nom}</h1>
         {questions?.map((question) => {
-          return <p>{question.fields.Intitule}</p>;
+          return <p key={question.id}>{question.fields.Intitule}</p>;
         })}
         <div>
           {reponses?.map((reponse) => {
-            return <p>{reponse.fields.Chapo}</p>;
+            return <p key={reponse.id}>{reponse.fields.Chapo}</p>;
           })}
         </div>
       </main>
