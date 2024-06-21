@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      deployment_required: ${{ steps.periodic-build.outputs.deployment_required }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -15,7 +17,8 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: ./periodic_build.sh
+      - id: periodic-build
+        run: ./periodic_build.sh
       - name: Export build
         uses: actions/upload-pages-artifact@v1
         with:
