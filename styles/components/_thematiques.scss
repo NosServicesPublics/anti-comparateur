@@ -37,7 +37,7 @@ ul.thematiques-list {
     &::before {
       content: '';
       display: block;
-      background-color: var(--thematique-color-light);
+      background-color: var(--thematique-color);
       position: absolute;
       height: .3em;
       bottom: .25em;
@@ -53,12 +53,20 @@ ul.thematiques-list {
   & + .question-link {
     margin-top: 1rem;
   }
-  .question-link__number {
-    font-size: 1.25rem;
-    font-weight: 900;
+}
+.question-link__number {
+  font-size: 1.25em;
+  font-weight: 900;
 
-    @include with-thematique-color {
-      color: var(--thematique-color-light);
-    }
+  @include with-thematique-color {
+    color: var(--thematique-color);
   }
+}
+
+.reponses {
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

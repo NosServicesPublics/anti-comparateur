@@ -1,29 +1,36 @@
 import Head from "next/head";
-import Link from "next/link";
-
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import Reponse from "@/components/Reponse";
+import Breadcrumb from "@/components/Breadcrumb";
 
 import thematiquesData from "../../data/thematiques.json";
 import questionsData from "../../data/questions.json";
 import reponsesData from "../../data/reponses.json";
 
+import {
+  getThematiqueLabel,
+  getQuestionId,
+  getQuestionName,
+  getQuestionSlug,
+  getResponseId,
+  getThematiquesPaths,
+  findThematiqueById,
+  getThematiqueQuestions,
+  getThematiqueKey,
+  getQuestionNumber,
+  formatQuestionNumber,
+} from "@/lib/map";
+
 export async function getStaticPaths() {
   return {
-    paths: thematiquesData.records.map((r) => {
-      return { params: { thematique_id: r.fields.Slug } };
-    }),
+    paths: getThematiquesPaths(thematiquesData),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const thematique = thematiquesData.records.filter(
-    (t) => t.fields.Slug == params.thematique_id,
-  )[0];
-  const questions = questionsData.records.filter(
-    (q) => q.fields.Thematique == thematique.id,
-  );
+  const thematique = findThematiqueById(thematiquesData, params.thematique_id);
+  const questions = getThematiqueQuestions(questionsData, thematique.id);
+
   const questionsMap = questions.reduce((a, v) => {
     a[v.id] = v;
     v.reponses = [];
@@ -36,47 +43,66 @@ export async function getStaticProps({ params }) {
       a[v.fields.Qui] = v
       return a
     }, {})
-  const partis = ['NFP', 'LREM', 'LR', 'RN']
+
   partis.forEach((p) => {
-    if (reponsesMap[p])
-      questionsMap[reponsesMap[p].fields.Question].reponses.push(reponsesMap[p]);
+    if (reponsesMap[p]) {
+      questionsMap[reponsesMap[p].fields.Question]
+        .reponses.push(reponsesMap[p]);
+    }
   });
   return { props: { thematique, questions } };
 }
 
-export default function Home({ thematique, questions }) {
+export default function ThematiquePage({ thematique, questions }) {
+  const name = getThematiqueLabel(thematique);
+  const thematiqueKey = getThematiqueKey(thematique);
   return (
     <>
       <Head>
-        <title>{thematique.fields.Nom}</title>
+        <title>{name}</title>
       </Head>
-      <main>
-        <h1>{thematique?.fields.Nom}</h1>
-        {questions?.map((question) => {
-          return (
-            <div key={question.id} id={question.fields.Slug}>
-              <h2>{question.fields.Intitule}</h2>
-              <div>
-                {question.reponses.map((r) => {
-                  return (
-                    <div key={r.id}>
-                      <h3>Pour {r.fields.Qui}</h3>
-                      <div>{r.fields.Chapo}</div>
-                      <div dangerouslySetInnerHTML={{
-                        __html: r.fields.TexteHTML,
-                      }} />
-                      <Link
-                        href={`${thematique.fields.Slug}/${question.fields.Slug}/${r.fields.Qui}`}
-                      >
-                        Plus de détails
-                      </Link>
-                    </div>
-                  );
-                })}
+      <main
+        data-thematique-key={thematiqueKey}
+      >
+        <section className="main-column">
+          <Breadcrumb />
+          <h1>{name}</h1>
+          {questions?.map((question) => {
+            return (
+              <div
+                key={getQuestionId(question)}
+                id={getQuestionSlug(question)}
+              >
+                <h2>
+                  <span
+                    className="question-link__number"
+                    data-thematique-key={thematiqueKey}
+                  >
+                    {formatQuestionNumber(getQuestionNumber(question))}
+                  </span>
+                  <span
+                    className="thematique-label"
+                    data-thematique-key={thematiqueKey}
+                  >
+                    {getQuestionName(question)}
+                  </span>
+                </h2>
+                <div className="reponses">
+                  {question.reponses.map((r) => {
+                    return (
+                      <Reponse
+                        key={getResponseId(r)}
+                        reponse={r}
+                        question={question}
+                        thematique={thematique}
+                      />
+                    )
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </section>
       </main>
     </>
   );

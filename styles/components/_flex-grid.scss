@@ -28,9 +28,29 @@ ul.flex-grid li.flex-grid__item {
 }
 
 ul.flex-inline-grid {
-  gap: 1rem;
+  // gap: 1rem;
+  margin: -.5rem;
 }
 
 ul.flex-inline-grid li.flex-grid__item {
-  flex: 1;
+  flex-basis: 100%;
+  padding: .5rem;
+
+  @include sm {
+    flex: 0 0 50%;
+  }
+  @include md {
+    flex: 0 0 25%;
+  }
+  @include md {
+    flex: 0 0 25%;
+  }
+
+  @include lg {
+    flex: 0 0 12%;
+  }
+
+  @include xl {
+    flex: 0 0 12,5%;
+  }
 }

@@ -29,29 +29,39 @@ $justice-et-securite: #DBA6DBFF;
 $personnes-agees: #A1A5FFFF;
 $transport: #73D1B0FF;
 
+$color-dark: #2B2B2B;
+
 $thematiques: (
   (key: education,
-    color-light: $ecole,
+    color: $ecole,
+    color-light: $ecole-light,
   ),
   (key: energie,
-    color-light: $energie,
+    color: $energie,
+    color-light: $energie-light,
   ),
   (key: fiscalite,
+    color: $impots,
     color-light: $impots,
   ),
   (key: justice,
+    color: $justice-et-securite,
     color-light: $justice-et-securite,
   ),
   (key: logement,
+    color: $logement,
     color-light: $logement,
   ),
   (key: sante,
+    color: $sante,
     color-light: $sante,
   ),
   (key: securite,
+    color: $justice-et-securite,
     color-light: $justice-et-securite,
   ),
   (key: transports,
+    color: $transport,
     color-light: $transport,
   ),
 );

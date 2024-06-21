@@ -1,0 +1,18 @@
+footer.site-footer {
+  background: $color-dark;
+  padding: 1rem 2rem;
+  color: white;
+  height: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include md {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  font-size: 1.2rem;
+}

@@ -15,7 +15,7 @@ export default function QuestionLink({ thematique, question }) {
       className="question-link"
     >
       <span
-        class="question-link__number"
+        className="question-link__number"
         data-thematique-key={thematiqueKey}
       >
         {formatQuestionNumber(getQuestionNumber(question))}

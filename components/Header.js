@@ -9,8 +9,8 @@ export default function Header() {
           <Image
             src="/nsp-logo.svg"
             alt="Logo du collectif Nos services publics"
-            width={100}
-            height={100}
+            width={72}
+            height={72}
           />
         </div>
         <div className="site-title">

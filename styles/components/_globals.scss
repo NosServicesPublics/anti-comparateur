@@ -1,7 +1,32 @@
 :root {
   font-family: $font-family;
+
+  font-size: 14px;
+
+  @include sm {
+    font-size: 15px;
+  }
+  
+  @include md {
+    font-size: 16px;
+  }
+
+  @include lg {
+    font-size: 17px;
+  }
+
+  @include xl {
+    font-size: 18px;
+  }
 }
 
 .main-column {
   @include main-column;
+}
+
+main {
+  min-height: calc(100vh - $header-height);
+  @include with-thematique-color {
+    background-color: var(--thematique-color-light);
+  }
 }
