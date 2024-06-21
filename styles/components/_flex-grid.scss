@@ -11,7 +11,7 @@ ul.flex-grid {
 }
 
 ul.flex-grid li.flex-grid__item {
-  flex: 1;
+  flex-basis: 100%;
   padding: 1rem;
 
   @include md {
@@ -45,12 +45,12 @@ ul.flex-inline-grid li.flex-grid__item {
   @include md {
     flex: 0 0 25%;
   }
-
+  
   @include lg {
-    flex: 0 0 12%;
+    flex: 0 0 12.5%;
   }
 
   @include xl {
-    flex: 0 0 12,5%;
+    flex: 1;
   }
 }

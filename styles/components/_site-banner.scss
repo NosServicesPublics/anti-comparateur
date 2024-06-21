@@ -1,21 +1,20 @@
 .site-banner {
   width: 100%;
+
   padding-top: 4rem;
   padding-bottom: 4rem;
-  // min-height: 90rem;
-  // @include sm {
-  //   min-height: 65rem;
-  // }
-  // @include md() {
-  //   height: 40vh;
-  //   min-height: 45rem;
-  // }
-  // @include lg() {
-  //   height: 35vh;
-  //   min-height: 40rem;
-  // }
+
+  @include md() {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @include lg() {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
   background: url('/nsp-bg-gradient.png') no-repeat center center;
-  // background: url('/nsp-background-landscape.png') no-repeat center center;
   background-size: cover;
   color: white;
   display: flex;

@@ -18,6 +18,7 @@ import {
   getThematiqueKey,
   getQuestionNumber,
   formatQuestionNumber,
+  partis,
 } from "@/lib/map";
 
 export async function getStaticPaths() {
@@ -64,7 +65,7 @@ export default function ThematiquePage({ thematique, questions }) {
       <main
         data-thematique-key={thematiqueKey}
       >
-        <section className="main-column">
+        <section className="main-column main-section">
           <Breadcrumb />
           <h1>{name}</h1>
           {questions?.map((question) => {

@@ -14,12 +14,26 @@ export default function Reponse({ thematique, question, reponse }) {
   const reponseAbstract = getResponseAbstract(reponse);
   const reponseContent = getResponseContent(reponse);
   return (
-    <div key={reponseId}>
-      <h3>Selon {reponseAuthor}</h3>
-      <div>{reponseAbstract}</div>
-      <div dangerouslySetInnerHTML={{
-        __html: reponseContent,
-      }} />
+    <div
+      className="reponse"
+      key={reponseId}
+    >
+      <h3
+        className="reponse__author"
+      >
+        SELON <span class="reponse__author-name">{reponseAuthor.toUpperCase()}</span>
+      </h3>
+      <div
+        className="reponse__abstract"
+      >
+        {reponseAbstract}
+      </div>
+      <div
+        className="reponse__content"
+        dangerouslySetInnerHTML={{
+          __html: reponseContent,
+        }}
+      />
       <Link
         href={getResponseDetailsLink(thematique, question, reponse)}
       >

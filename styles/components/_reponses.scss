@@ -1,0 +1,47 @@
+.reponses {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+
+  @include lg {
+    padding: 2rem;
+  }
+
+  margin: -1rem;
+}
+
+.reponse {
+  flex-basis: 100%;
+  padding: 1rem;
+
+  @include md {
+    flex: 0 0 50%;
+  }
+
+  @include lg {
+    flex: 1;
+  }
+}
+
+.reponse__author {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.reponse__author-name {
+  font-weight: 600;
+}
+
+.reponse__abstract {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.reponse__content {
+  p {
+    font-size: .85rem;
+    font-weight: 400;
+  }
+}

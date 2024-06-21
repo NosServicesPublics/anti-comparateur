@@ -7,7 +7,7 @@ export default function MentionsLegales() {
         <title>Mentions légales | Le comparateur des programmes (à renommer)</title>
       </Head>
       <main>
-        <section className="main-column">
+        <section className="main-column main-section">
           <h1>Mentions légales</h1>
         </section>
       </main>

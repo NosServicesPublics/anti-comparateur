@@ -7,7 +7,7 @@ export default function APropos() {
         <title>À Propos | Le comparateur des programmes (à renommer)</title>
       </Head>
       <main>
-        <section className="main-column">
+        <section className="main-column main-section">
           <h1>À Propos</h1>
         </section>
       </main>

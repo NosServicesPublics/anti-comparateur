@@ -20,13 +20,23 @@
   }
 }
 
-.main-column {
-  @include main-column;
-}
-
 main {
   min-height: calc(100vh - $header-height);
   @include with-thematique-color {
     background-color: var(--thematique-color-light);
+  }
+}
+
+.main-column {
+  @include main-column;
+}
+
+section.main-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include lg {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }

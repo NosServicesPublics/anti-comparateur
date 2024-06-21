@@ -12,6 +12,7 @@ import {
   findQuestionBySlug,
   getResponsePathParams,
   findQuestionReponse,
+  getThematiqueKey,
   getResponseAuthor,
   getResponseAbstract,
   getResponseContent,
@@ -40,12 +41,16 @@ export async function getStaticProps({ params }) {
 }
 
 export default function ResponsePage({ thematique, question, reponse }) {
+  const thematiqueKey = getThematiqueKey(thematique);
   return (
     <>
       <Head>
         <title>Réponse</title>
       </Head>
-      <main>
+      <main
+        data-thematique-key={thematiqueKey}
+      >
+        <section className='main-column main-section'>
         <h1>{getThematiqueLabel(thematique)}</h1>
         <h2>{getQuestionName(question)}</h2>
         <h3>Pour {getResponseAuthor(reponse)}</h3>
@@ -67,6 +72,7 @@ export default function ResponsePage({ thematique, question, reponse }) {
             __html: reponse?.fields.AnalyseHTML,
           }} />
         </fieldset>
+        </section>
       </main>
     </>
   );

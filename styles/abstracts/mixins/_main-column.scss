@@ -8,17 +8,17 @@
   }
   
   @include lg {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
   
   @include xl {
-    padding-left: calc(50% - 32rem);
-    padding-right: calc(50% - 32rem);
+    padding-left: calc(50% - 36rem);
+    padding-right: calc(50% - 36rem);
   }
   
   @include xxl {
-    padding-left: calc(50% - 36rem);
-    padding-right: calc(50% - 36rem);
+    padding-left: calc(50% - 40rem);
+    padding-right: calc(50% - 40rem);
   }
 }

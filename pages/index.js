@@ -10,7 +10,7 @@ import questionsData from "../data/questions.json";
 
 import pickAWinner from "@/lib/twitter";
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const [selectedName, selectedPicto] = pickAWinner();
 
   return {
@@ -38,7 +38,7 @@ export default function Home({
         <SiteBanner>
           <ThematiquesList thematiques={thematiques} />
         </SiteBanner>
-        <section className="main-column">
+        <section className="main-column main-section">
           <ThematiquesGrid thematiques={thematiques} questions={questions} />
           <TwitterButton
             selectedName={selectedName}
