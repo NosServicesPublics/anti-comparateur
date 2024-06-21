@@ -2,7 +2,7 @@
 
 ./import.sh
 RESULT=`node --eval "const dates = require('./data/dates.json'); console.log(dates.records[0].fields.TODO);"`
-if "$RESULT" == "false";
+if [ "$RESULT" = "false" ];
 then
 	echo "Nothing new, no need to build"
 	exit 0
