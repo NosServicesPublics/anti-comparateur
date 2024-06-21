@@ -1,11 +1,57 @@
-$color-primary: red;
 $charte: #00b794;
 $white: #ffffff;
+$noir: #000000;
+
 $rouge: #c20000;
+$orange: #b44b00;
+$bleu: #5b5ee8;
+
 $vert-allegee: #e9fefa;
 $bleu-allege: #d7d8ff;
 $rouge-allege: #f5c6c6;
 $orange-allegee: #fbd6bc;
-$orange: #b44b00;
-$noir: #000000;
-$bleu: #5b5ee8;
+
+/* Variables  */
+$nsp: #06708EFF;
+$gris-nsp: #636363FF;
+$fond-vert-: #F5FDFFFF;
+$vert: #00412AFF;
+$vert-gradient: #ABEFD7FF;
+
+$ecole: #E5B269FF;
+$ecole-light: #FFFAF2FF;
+$energie: #C4DE78FF;
+$energie-light: #F7FCE7FF;
+$impots: #8CC5C9FF;
+$logement: #DFA68EFF;
+$sante: #90C2E7FF;
+$justice-et-securite: #DBA6DBFF;
+$personnes-agees: #A1A5FFFF;
+$transport: #73D1B0FF;
+
+$thematiques: (
+  (key: education,
+    color-light: $ecole,
+  ),
+  (key: energie,
+    color-light: $energie,
+  ),
+  (key: fiscalite,
+    color-light: $impots,
+  ),
+  (key: justice,
+    color-light: $justice-et-securite,
+  ),
+  (key: logement,
+    color-light: $logement,
+  ),
+  (key: sante,
+    color-light: $sante,
+  ),
+  (key: securite,
+    color-light: $justice-et-securite,
+  ),
+  (key: transports,
+    color-light: $transport,
+  ),
+);

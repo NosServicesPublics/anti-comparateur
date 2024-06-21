@@ -6,8 +6,8 @@ export default function Document() {
     <Html lang="fr">
       <Head></Head>
       <body>
-        <header>
-          <div class="site-logo">
+        <header className='main-column'>
+          <div className="site-logo">
             <Image 
               src="/nsp-logo.svg"
               alt="Logo du collectif Nos services publics"

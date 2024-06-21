@@ -1,0 +1,64 @@
+.thematiques-grid {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+ul.thematiques-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.thematique-button {
+  border-radius: 0.25rem;
+  background-color: white;
+
+  a {
+    color: black;
+    width: 100%;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  p.thematique-label {
+    margin: 0 auto;
+  }
+}
+
+.thematique-label {
+  @include with-thematique-color {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+
+    &::before {
+      content: '';
+      display: block;
+      background-color: var(--thematique-color-light);
+      position: absolute;
+      height: .3em;
+      bottom: .25em;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+}
+.question-link {
+  text-decoration: none;
+  font-weight: 600;
+  & + .question-link {
+    margin-top: 1rem;
+  }
+  .question-link__number {
+    font-size: 1.25rem;
+    font-weight: 900;
+
+    @include with-thematique-color {
+      color: var(--thematique-color-light);
+    }
+  }
+}

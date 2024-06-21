@@ -1,0 +1,70 @@
+$headings: h1, h2, h3, h4, h5, h6;
+
+p {
+  font-weight: 400;
+}
+
+#{$headings} {
+  font-weight: 900;
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+  
+  &:not(:first-child) {
+    margin-top: 1.5em;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1 {
+  font-size: 3rem; 
+  line-height: 1.2; 
+}
+
+h2 {
+  font-size: 2.25rem; 
+}
+
+h3 {
+  font-size: 1.875rem; 
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem; 
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+p {
+  font-size: 1.125rem; 
+  line-height: 1.625; 
+  margin: 0; 
+  & + p {
+    margin-top: 1em;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+// a,
+// a:active,
+// a:visited,
+// button {
+//   color: black; 
+// }

@@ -1,0 +1,14 @@
+@each $font-weight, $font-weight-label in $font-weights {
+  @each $font-style, $font-style-label in $font-styles {
+    $url: "#{$font-path}/#{$font-prefix}#{$font-weight-label}#{$font-style-label}";
+
+    @font-face {
+      font-family: $main-font-name;
+      src: url("#{$url}.woff2") format("woff2"),
+      url("#{$url}.woff") format("woff");
+      font-weight: $font-weight;
+      font-style: $font-style;
+      font-display: $font-display;
+    }
+  }
+}

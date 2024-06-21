@@ -1,28 +1,25 @@
-import Link from "next/link";
+import ThematiqueButton from "@/components/ThematiqueButton";
+import FlexGrid from "@/components/FlexGrid";
+import FlexItem from "@/components/FlexItem";
 
 import {
-  getThematiqueKey,
   getThematiqueId,
-  getThematiqueAppLink,
-  getThematiqueLabel,
 } from "@/lib/map";
 
 export default function ThematiquesList({ thematiques }) {
   return (
-    <div>
-      <h2>Thématiques</h2>
-      <ul>
-        {thematiques.map((thematique) => (
-          <li key={getThematiqueId(thematique)}>
-            <Link
-              key={getThematiqueKey(thematique)}
-              href={getThematiqueAppLink(thematique)}
+    <>
+      <FlexGrid isInline={true}>
+        {thematiques?.map((thematique) => {
+          return (
+            <FlexItem
+              key={getThematiqueId(thematique)}
             >
-              {getThematiqueLabel(thematique)}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+              <ThematiqueButton thematique={thematique} />
+            </FlexItem>
+          );
+        })}
+    </FlexGrid>
+    </>
   );
 }

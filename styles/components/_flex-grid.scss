@@ -1,10 +1,16 @@
-.flex-grid {
+ul.flex-grid,
+ul.flex-inline-grid {
   display: flex;
+  list-style: none;
+  padding: 0;
   flex-wrap: wrap;
+}
+
+ul.flex-grid {
   margin: -1rem;
 }
 
-.flex-grid .flex-grid__item {
+ul.flex-grid li.flex-grid__item {
   flex: 1;
   padding: 1rem;
 
@@ -19,4 +25,12 @@
   @include xl {
     flex: 0 0 25%;
   }
+}
+
+ul.flex-inline-grid {
+  gap: 1rem;
+}
+
+ul.flex-inline-grid li.flex-grid__item {
+  flex: 1;
 }

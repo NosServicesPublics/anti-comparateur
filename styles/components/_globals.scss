@@ -1,0 +1,7 @@
+:root {
+  font-family: $font-family;
+}
+
+.main-column {
+  @include main-column;
+}

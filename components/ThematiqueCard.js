@@ -1,19 +1,22 @@
 import Link from "next/link";
+import QuestionLink from "@/components/QuestionLink";
 
 import {
   getThematiqueKey,
-  getQuestionName,
   getThematiqueLabel,
   getThematiqueAppLink,
-  getQuestionAppLink,
   isQuestionInThematique,
-  getQuestionId
+  getQuestionId,
 } from "@/lib/map";
 
 export default function ThematiqueCard({ thematique, questions }) {
+  const thematiqueKey = getThematiqueKey(thematique);
   return (
     <div className="thematique-card">
-      <h2 className="thematique-card__title">
+      <h2
+        className="thematique-card__title thematique-label"
+        data-thematique-key={thematiqueKey}
+      >
         <Link
           key={getThematiqueKey(thematique)}
           href={getThematiqueAppLink(thematique)}
@@ -26,17 +29,12 @@ export default function ThematiqueCard({ thematique, questions }) {
           .filter((q) => isQuestionInThematique(q, thematique))
           .map((q) => {
             return (
-              <div
+              <QuestionLink
                 key={getQuestionId(q)}
-                className="thematique-card__question"
-              >
-                <Link
-                  href={getQuestionAppLink(thematique, q)}
-                >
-                  {getQuestionName(q)}
-                </Link>
-              </div>
-            );
+                thematique={thematique}
+                question={q}
+              />
+            )
           })}
       </div>
     </div>

@@ -1,0 +1,21 @@
+$main-font-name: "Public Sans";
+$default-fonts: "Public Sans", -apple-system, system-ui, blinkmacsystemfont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family: $main-font-name, $default-fonts;
+$font-path: "/fonts/public-sans";
+$font-prefix: "subset-PublicSans";
+$font-display: swap;
+$font-styles: (
+  normal: "",
+  italic: "Italic",
+);
+$font-weights: (
+  100: "-Thin",
+  200: "-ExtraLight",
+  300: "-Light",
+  400: "-Regular",
+  500: "-Medium",
+  600: "-SemiBold",
+  700: "-Bold",
+  800: "-ExtraBold",
+  900: "-Black",
+);

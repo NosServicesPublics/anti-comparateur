@@ -1,0 +1,24 @@
+@mixin main-column {
+  padding-left: max(1rem, 5%);
+  padding-right: max(1rem, 5%);
+  
+  @include md {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  
+  @include lg {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  
+  @include xl {
+    padding-left: calc(50% - 32rem);
+    padding-right: calc(50% - 32rem);
+  }
+  
+  @include xxl {
+    padding-left: calc(50% - 36rem);
+    padding-right: calc(50% - 36rem);
+  }
+}

@@ -2,7 +2,7 @@ const X = 'X';
 
 function SiteBanner({ children }) {
   return ( 
-    <section className="site-banner">
+    <section className="site-banner main-column">
       <h1 className="site-banner__title">
         Prendre au sérieux la politique, mettre les programmes à l'épreuve
       </h1>

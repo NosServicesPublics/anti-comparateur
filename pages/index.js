@@ -26,8 +26,9 @@ export default function Home({ thematiques, questions }) {
         <SiteBanner>
           <ThematiquesList thematiques={thematiques} />
         </SiteBanner>
-        <ThematiquesGrid thematiques={thematiques} questions={questions} />
-        <a href="a-propos">À propos (TODO)</a>
+        <section className="main-column">
+          <ThematiquesGrid thematiques={thematiques} questions={questions} />
+        </section>
       </main>
     </>
   );

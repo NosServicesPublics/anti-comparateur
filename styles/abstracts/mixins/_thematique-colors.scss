@@ -1,0 +1,10 @@
+@mixin with-thematique-color {
+  @each $thematique in $thematiques {
+    $key: map-get($thematique, key);
+    $color-light: map-get($thematique, color-light);
+    &[data-thematique-key="#{$key}"] {
+      --thematique-color-light: #{$color-light};
+      @content;
+    }
+  }
+}
