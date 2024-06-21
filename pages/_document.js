@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function Document() {
   return (
@@ -7,7 +7,24 @@ export default function Document() {
       <Head></Head>
       <body>
         <header>
-          <Link href="/">Accueil</Link>
+          <div class="site-logo">
+            <Image 
+              src="/nsp-logo.svg"
+              alt="Logo du collectif Nos services publics"
+              width={100}
+              height={100}
+            />
+          </div>
+          <div className="site-title">
+            Le comparateur de programme
+          </div>
+          <nav className="site-nav">
+            <ul>
+              <li>
+                À propos
+              </li>
+            </ul>
+          </nav>
         </header>
         <Main />
         <NextScript />
