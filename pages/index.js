@@ -38,9 +38,7 @@ export default function Home({ thematiques, questions }) {
                 .map((q) => {
                   return (
                     <div key={q.id}>
-                      <Link
-                        href={`${thematique.fields.Slug}#question_${q.id}`}
-                      >
+                      <Link href={`${thematique.fields.Slug}#${q.fields.Slug}`}>
                         {q.fields.Intitule}
                       </Link>
                     </div>

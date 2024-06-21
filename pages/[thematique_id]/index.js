@@ -47,7 +47,7 @@ export default function Home({ thematique, questions }) {
         <h1>{thematique?.fields.Nom}</h1>
         {questions?.map((question) => {
           return (
-            <div key={question.id} id={`question_${question.id}`}>
+            <div key={question.id} id={question.fields.Slug}>
               <h2>{question.fields.Intitule}</h2>
               <div>
                 {question.reponses.map((r) => {
@@ -57,7 +57,7 @@ export default function Home({ thematique, questions }) {
                       <div>{r.fields.Chapo}</div>
                       <div>{r.fields.Texte}</div>
                       <Link
-                        href={`${thematique.fields.Slug}/question_${question.id}/${r.fields.Qui}`}
+                        href={`${thematique.fields.Slug}/${question.fields.Slug}/${r.fields.Qui}`}
                       >
                         Plus de détails
                       </Link>

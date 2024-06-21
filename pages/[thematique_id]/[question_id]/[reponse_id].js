@@ -20,9 +20,8 @@ export async function getStaticPaths() {
     paths: reponsesData.records.map((r) => {
       return {
         params: {
-          thematique_id:
-            thematiquesMap[r.fields.Thematique].fields.Slug,
-          question_id: `question_${r.fields.Question}`,
+          thematique_id: thematiquesMap[r.fields.Thematique].fields.Slug,
+          question_id: questionsMap[r.fields.Question].fields.Slug,
           reponse_id: r.fields.Qui,
         },
       };
@@ -35,10 +34,12 @@ export async function getStaticProps({ params }) {
   const thematique = thematiquesData.records.filter(
     (t) => t.fields.Slug == params.thematique_id,
   )[0];
-  const qid = params.question_id.split("_")[1];
-  const question = questionsData.records.filter((q) => q.id == qid)[0];
+  const question = questionsData.records.filter(
+    (q) => q.fields.Slug == params.question_id,
+  )[0];
   const reponse = reponsesData.records.filter(
-    (r) => r.fields.Qui == params.reponse_id && r.fields.Question == qid,
+    (r) =>
+      r.fields.Qui == params.reponse_id && r.fields.Question == question.id,
   )[0];
   return { props: { thematique, question, reponse } };
 }
