@@ -11,7 +11,7 @@ import reponsesData from "../../data/reponses.json";
 export async function getStaticPaths() {
   return {
     paths: thematiquesData.records.map((r) => {
-      return { params: { thematique_id: r.fields.Nom_technique } };
+      return { params: { thematique_id: r.fields.Slug } };
     }),
     fallback: false,
   };
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const thematique = thematiquesData.records.filter(
-    (t) => t.fields.Nom_technique == params.thematique_id,
+    (t) => t.fields.Slug == params.thematique_id,
   )[0];
   const questions = questionsData.records.filter(
     (q) => q.fields.Thematique == thematique.id,
@@ -57,7 +57,7 @@ export default function Home({ thematique, questions }) {
                       <div>{r.fields.Chapo}</div>
                       <div>{r.fields.Texte}</div>
                       <Link
-                        href={`${thematique.fields.Nom_technique}/question_${question.id}/${r.fields.Qui}`}
+                        href={`${thematique.fields.Slug}/question_${question.id}/${r.fields.Qui}`}
                       >
                         Plus de détails
                       </Link>

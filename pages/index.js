@@ -27,8 +27,8 @@ export default function Home({ thematiques, questions }) {
             <div key={thematique.id}>
               <h2>
                 <Link
-                  key={thematique.fields.Nom_technique}
-                  href={`${thematique.fields.Nom_technique}`}
+                  key={thematique.fields.Slug}
+                  href={`${thematique.fields.Slug}`}
                 >
                   {thematique.fields.Nom}
                 </Link>
@@ -39,7 +39,7 @@ export default function Home({ thematiques, questions }) {
                   return (
                     <div key={q.id}>
                       <Link
-                        href={`${thematique.fields.Nom_technique}#question_${q.id}`}
+                        href={`${thematique.fields.Slug}#question_${q.id}`}
                       >
                         {q.fields.Intitule}
                       </Link>

@@ -21,7 +21,7 @@ export async function getStaticPaths() {
       return {
         params: {
           thematique_id:
-            thematiquesMap[r.fields.Thematique].fields.Nom_technique,
+            thematiquesMap[r.fields.Thematique].fields.Slug,
           question_id: `question_${r.fields.Question}`,
           reponse_id: r.fields.Qui,
         },
@@ -33,7 +33,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const thematique = thematiquesData.records.filter(
-    (t) => t.fields.Nom_technique == params.thematique_id,
+    (t) => t.fields.Slug == params.thematique_id,
   )[0];
   const qid = params.question_id.split("_")[1];
   const question = questionsData.records.filter((q) => q.id == qid)[0];
