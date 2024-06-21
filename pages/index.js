@@ -20,7 +20,7 @@ export default function Home({ thematiques, questions }) {
   return (
     <>
       <Head>
-        <title>Le comparateur des programmes à renommer</title>
+        <title>Le comparateur des programmes (à renommer)</title>
       </Head>
       <main>
         <SiteBanner>
