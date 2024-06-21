@@ -74,7 +74,9 @@ export default function Home({ thematique, question, reponse }) {
         </fieldset>
         <fieldset>
           <legend>Analyse</legend>
-          <div>{reponse?.fields.Analyse}</div>
+          <div dangerouslySetInnerHTML={{
+    __html: reponse?.fields.AnalyseHTML,
+  }}/>
         </fieldset>
       </main>
     </>
