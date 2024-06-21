@@ -7,7 +7,7 @@ import questionsData from "../../data/questions.json";
 import reponsesData from "../../data/reponses.json";
 
 import {
-  getThematiqueLabel,
+  getThematiqueName,
   getQuestionId,
   getQuestionName,
   getQuestionSlug,
@@ -55,7 +55,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function ThematiquePage({ thematique, questions }) {
-  const name = getThematiqueLabel(thematique);
+  const name = getThematiqueName(thematique);
   const thematiqueKey = getThematiqueKey(thematique);
   return (
     <>

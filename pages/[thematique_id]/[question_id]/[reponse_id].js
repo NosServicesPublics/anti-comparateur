@@ -4,21 +4,24 @@ import thematiquesData from "../../../data/thematiques.json";
 import questionsData from "../../../data/questions.json";
 import reponsesData from "../../../data/reponses.json";
 
+import Link from "next/link";
+
 import {
   map,
-  getThematiqueLabel,
+  getThematiqueName,
   getQuestionName,
   findThematiqueById,
   findQuestionBySlug,
+  getQuestionAppLink,
   getResponsePathParams,
   findQuestionReponse,
   getThematiqueKey,
   getResponseAuthor,
   getResponseAbstract,
   getResponseContent,
+  getThematiqueAppLink,
   responseDetailsFields,
 } from "@/lib/map.js";
-
 
 export async function getStaticPaths() {
   const thematiquesMap = map(thematiquesData);
@@ -51,27 +54,51 @@ export default function ResponsePage({ thematique, question, reponse }) {
         data-thematique-key={thematiqueKey}
       >
         <section className='main-column main-section'>
-        <h1>{getThematiqueLabel(thematique)}</h1>
-        <h2>{getQuestionName(question)}</h2>
-        <h3>Pour {getResponseAuthor(reponse)}</h3>
-        <h4>{getResponseAbstract(reponse)}</h4>
-        <div dangerouslySetInnerHTML={{
-          __html: getResponseContent(reponse)
-        }} />
-        {responseDetailsFields.map((f) => {
-          return (
-            <fieldset key={f.key}>
-              <legend>{f.name}</legend>
-              <div>{reponse?.fields[f.key]}</div>
-            </fieldset>
-          )
-        })}
-        <fieldset>
-          <legend>Analyse</legend>
-          <div dangerouslySetInnerHTML={{
-            __html: reponse?.fields.AnalyseHTML,
-          }} />
-        </fieldset>
+          <ul>
+            <li>
+              <Link href='/'>
+                Accueil
+              </Link>
+            </li>
+            <li>
+              <Link href={getThematiqueAppLink(thematique)}>
+                <span
+                  data-thematique-key={thematiqueKey}
+                >
+                  {getThematiqueName(thematique)}
+                </span>
+              </Link>
+            </li>
+            <li>
+              {getQuestionName(question)}
+            </li>
+          </ul>
+          <section className='response-details'>
+            <p><Link href={getQuestionAppLink(thematique, question)}>Retour à la question</Link></p>
+            <h1>Détails pour {getResponseAuthor(reponse)}</h1>
+            <div className='response-details__columns'>
+              <div className='response-details__column'>
+                {responseDetailsFields.map((f) => {
+                  return (
+                    <div
+                      className='response-details__block'
+                      key={f.key}>
+                      <h3>{f.name}</h3>
+                      <div>{reponse?.fields[f.key]}</div>
+                    </div>
+                  )
+                })}
+              </div>
+              <div className='response-details__column'>
+                <div className='response-details__block'>
+                  <h3>Analyse</h3>
+                  <div dangerouslySetInnerHTML={{
+                    __html: reponse?.fields.AnalyseHTML,
+                  }} />
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </main>
     </>

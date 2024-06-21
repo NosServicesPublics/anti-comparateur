@@ -3,7 +3,7 @@ import QuestionLink from "@/components/QuestionLink";
 
 import {
   getThematiqueKey,
-  getThematiqueLabel,
+  getThematiqueName,
   getThematiqueAppLink,
   isQuestionInThematique,
   getQuestionId,
@@ -21,7 +21,7 @@ export default function ThematiqueCard({ thematique, questions }) {
           key={getThematiqueKey(thematique)}
           href={getThematiqueAppLink(thematique)}
         >
-          {getThematiqueLabel(thematique)}
+          {getThematiqueName(thematique)}
         </Link>
       </h2>
       <div className="thematique-card__questions">

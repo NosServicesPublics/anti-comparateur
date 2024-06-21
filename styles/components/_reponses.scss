@@ -45,3 +45,29 @@
     font-weight: 400;
   }
 }
+
+.response-details__columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 2rem;
+
+  .response-details__column {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .response-details__block {
+      background: white;
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
