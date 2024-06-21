@@ -25,7 +25,7 @@ export default function TwitterButton(props) {
     return (
       <div className={styles.contentWrapper}>
         <p>
-          J'ai comparé les programmes, les discours et les actes des différentes
+          J’ai comparé les programmes, les discours et les actes des différentes
           listes aux législatives grâce au comparateur de{" "}
           <a
             target="_blank"
@@ -37,7 +37,7 @@ export default function TwitterButton(props) {
           </a>
            !
         </p>
-        <p>N'hésitez pas à faire de même pour être informé avant de voter :</p>
+        <p>N’hésitez pas à faire de même pour être informé avant de voter :</p>
         <p>
           <a
             target="_blank"
