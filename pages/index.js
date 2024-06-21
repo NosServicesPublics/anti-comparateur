@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Link from "next/link";
 
-import { useState, useEffect } from "react";
+import ThematiquesGrid from "@/components/ThematiquesGrid";
+import ThematiquesList from "@/components/ThematiquesList";
+import SiteBanner from "@/components/SiteBanner";
 
 import thematiquesData from "../data/thematiques.json";
 import questionsData from "../data/questions.json";
@@ -22,33 +23,10 @@ export default function Home({ thematiques, questions }) {
         <title>Le comparateur des programmes à renommer</title>
       </Head>
       <main>
-        {thematiques?.map((thematique) => {
-          return (
-            <div key={thematique.id}>
-              <h2>
-                <Link
-                  key={thematique.fields.Nom_technique}
-                  href={`${thematique.fields.Nom_technique}`}
-                >
-                  {thematique.fields.Nom}
-                </Link>
-              </h2>
-              {questions
-                .filter((q) => q.fields.Thematique == thematique.id)
-                .map((q) => {
-                  return (
-                    <div key={q.id}>
-                      <Link
-                        href={`${thematique.fields.Nom_technique}#question_${q.id}`}
-                      >
-                        {q.fields.Intitule}
-                      </Link>
-                    </div>
-                  );
-                })}
-            </div>
-          );
-        })}
+        <SiteBanner>
+          <ThematiquesList thematiques={thematiques} />
+        </SiteBanner>
+        <ThematiquesGrid thematiques={thematiques} questions={questions} />
         <a href="a-propos">À propos (TODO)</a>
       </main>
     </>

@@ -1,0 +1,22 @@
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem;
+}
+
+.flex-grid .flex-grid__item {
+  flex: 1;
+  padding: 1rem;
+
+  @include md {
+    flex: 0 0 50%;
+  }
+
+  @include lg {
+    flex: 0 0 33.3333%;
+  }
+
+  @include xl {
+    flex: 0 0 25%;
+  }
+}
