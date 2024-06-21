@@ -55,7 +55,9 @@ export default function Home({ thematique, question, reponse }) {
         <h2>{question?.fields.Intitule}</h2>
         <h3>Pour {reponse?.fields.Qui}</h3>
         <h4>{reponse?.fields.Chapo}</h4>
-        <div>{reponse?.fields.Texte}</div>
+          <div dangerouslySetInnerHTML={{
+    __html: reponse?.fields.TexteHTML,
+  }}/>
         <fieldset>
           <legend>Programme_2024</legend>
           <div>{reponse?.fields.Programme_2024}</div>

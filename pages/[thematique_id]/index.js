@@ -29,10 +29,17 @@ export async function getStaticProps({ params }) {
     v.reponses = [];
     return a;
   }, {});
-  reponsesData.records
+
+  const reponsesMap = reponsesData.records
     .filter((q) => q.fields.Thematique == thematique.id)
-    .forEach((r) => {
-      questionsMap[r.fields.Question].reponses.push(r);
+    .reduce((a, v) => {
+      a[v.fields.Qui] = v
+      return a
+    }, {})
+  const partis = ['NFP', 'LREM', 'LR', 'RN']
+  partis.forEach((p) => {
+    if (reponsesMap[p])
+      questionsMap[reponsesMap[p].fields.Question].reponses.push(reponsesMap[p]);
     });
   return { props: { thematique, questions } };
 }
@@ -55,7 +62,9 @@ export default function Home({ thematique, questions }) {
                     <div key={r.id}>
                       <h3>Pour {r.fields.Qui}</h3>
                       <div>{r.fields.Chapo}</div>
-                      <div>{r.fields.Texte}</div>
+                                <div dangerouslySetInnerHTML={{
+    __html: r.fields.TexteHTML,
+  }}/>
                       <Link
                         href={`${thematique.fields.Slug}/${question.fields.Slug}/${r.fields.Qui}`}
                       >
