@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
   partis.forEach((p) => {
     if (reponsesMap[p])
       questionsMap[reponsesMap[p].fields.Question].reponses.push(reponsesMap[p]);
-    });
+  });
   return { props: { thematique, questions } };
 }
 
@@ -62,9 +62,9 @@ export default function Home({ thematique, questions }) {
                     <div key={r.id}>
                       <h3>Pour {r.fields.Qui}</h3>
                       <div>{r.fields.Chapo}</div>
-                                <div dangerouslySetInnerHTML={{
-    __html: r.fields.TexteHTML,
-  }}/>
+                      <div dangerouslySetInnerHTML={{
+                        __html: r.fields.TexteHTML,
+                      }} />
                       <Link
                         href={`${thematique.fields.Slug}/${question.fields.Slug}/${r.fields.Qui}`}
                       >
