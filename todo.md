@@ -8,13 +8,9 @@
 
 ## Styles
 
-- changer la favicon
 - setup l'accordéon pour les questions en mobile
-- style du footer en vue mobile
 - intégrer les pictos quand c'est prêt
 - passer le titre d'une question en display flex dans les pages [thematique_id]
-- régler le header en mobile
-- dans la bannière de la home, remplacer le 'X questions" par le nombre réel de questions
 
 ## Contenus
 

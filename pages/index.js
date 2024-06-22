@@ -36,7 +36,7 @@ export default function Home({
         <title>{SITE_TITLE}</title>
       </Head>
       <main>
-        <SiteBanner>
+        <SiteBanner nQuestions={questions.length}>
           <ThematiquesButtonsGrid thematiques={thematiques} />
         </SiteBanner>
         <section className="main-column main-section">

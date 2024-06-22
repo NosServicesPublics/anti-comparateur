@@ -18,20 +18,22 @@ export default function QuestionBlock({ thematique, question }) {
       className="question-block"
       id={getQuestionSlug(question)}
     >
-      <h2 className="question-block__title">
+      <div className="question-block__title">
         <span
           className="question-link__number"
           data-thematique-key={thematiqueKey}
         >
           {formatQuestionNumber(getQuestionNumber(question))}
         </span>
-        <span
-          className="thematique-underlined"
-          data-thematique-key={thematiqueKey}
-        >
-          {getQuestionName(question)}
-        </span>
-      </h2>
+        <h2 >
+          <span
+            className="thematique-underlined"
+            data-thematique-key={thematiqueKey}
+          >
+            {getQuestionName(question)}
+          </span>
+        </h2>
+      </div>
       <div className="question-block__responses">
         {question.reponses.map((response) => {
           return (
@@ -43,7 +45,7 @@ export default function QuestionBlock({ thematique, question }) {
             />
           )
         }
-      )}
+        )}
       </div>
     </div>
   );

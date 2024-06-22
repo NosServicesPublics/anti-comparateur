@@ -1,23 +1,63 @@
 .site-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: $header-height;
+  align-items: stretch;
+  height: $header-height-mobile;
+
+  @include md {
+    height: $header-height;
+  }
+
+  @include sm {
+    flex-direction: row;
+  }
 }
 
 .site-branding {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1rem;
+  padding-top: .75rem;
+
+  @include sm {
+    padding-top: 0;
+    gap: 2rem;
+  }
+}
+
+.site-logo {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  max-width: 3rem;
+  max-height: 3rem;
+
+  @include md {
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .site-title {
-  font-size: 1.375rem;
+  font-size: 1rem;
+
+  @include md {
+    font-size: 1.25rem;
+  }
+
   font-weight: 400;
 }
 
 nav.site-nav {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 .5rem;
   gap: 1.5rem;
 
   a {

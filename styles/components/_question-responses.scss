@@ -8,13 +8,25 @@
     .question-block__title {
       margin-bottom: 3rem;
       line-height: 1.125;
+      font-size: 1.75rem;
+      display: flex;
+      align-items: flex-start;
+
+      h2 {
+        margin: 0;
+        font-size: inherit;
+        line-height: inherit;
+      }
 
       span {
-        line-height: 1.125;
+        line-height: inherit;
       }
 
       .question-link__number {
-        margin-right: 1.5rem;
+        margin-right: .5rem;
+        @include md {
+          margin-right: 1rem;
+        }
       }
     }
 
