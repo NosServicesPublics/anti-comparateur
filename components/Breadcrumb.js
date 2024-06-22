@@ -1,10 +1,16 @@
 import Link from 'next/link'
+import { RiArrowLeftLine } from "react-icons/ri";
 
 export default function Breadcrumb() {
   return (
-    <Link
-      href='/'
-      className='breadcrumb'
-    >Retour à l&apos;accueil</Link>
+    <div className='breadcrumb'>
+      <RiArrowLeftLine />
+      <Link
+        href='/'
+        className=''
+      >
+        Retour à l&apos;accueil
+      </Link>
+    </div>
   )
 }

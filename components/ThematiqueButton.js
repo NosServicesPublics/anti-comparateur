@@ -15,7 +15,7 @@ export default function ThematiqueButton({ thematique }) {
         href={getThematiqueAppLink(thematique)}
       >
         <p
-          className="thematique-button__label thematique-label"
+          className="thematique-button__label thematique-underlined"
           data-thematique-key={thematiqueKey}
         >
           {getThematiqueName(thematique)}

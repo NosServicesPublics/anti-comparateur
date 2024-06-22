@@ -8,37 +8,42 @@ import {
   getResponseContent,
 } from "@/lib/map";
 
-export default function Reponse({ thematique, question, reponse }) {
+export default function ResponseAbstract({ thematique, question, reponse }) {
   const reponseId = getResponseId(reponse);
   const reponseAuthor = getResponseAuthor(reponse);
   const reponseAbstract = getResponseAbstract(reponse);
   const reponseContent = getResponseContent(reponse);
   return (
     <div
-      className="reponse"
+      className="response-short-block"
       key={reponseId}
     >
       <h3
-        className="reponse__author"
+        className="response__author"
       >
-        SELON <span class="reponse__author-name">{reponseAuthor.toUpperCase()}</span>
+        SELON <span className="response__author-name">{reponseAuthor.toUpperCase()}</span>
       </h3>
       <div
-        className="reponse__abstract"
+        className="response__abstract"
       >
         {reponseAbstract}
       </div>
       <div
-        className="reponse__content"
+        className="response__content"
         dangerouslySetInnerHTML={{
           __html: reponseContent,
         }}
       />
-      <Link
-        href={getResponseDetailsLink(thematique, question, reponse)}
+      <div
+        className="response__details-link"
       >
-        Plus de détails
-      </Link>
+        <Link
+          className=""
+          href={getResponseDetailsLink(thematique, question, reponse)}
+        >
+          Plus de détails
+        </Link>
+      </div>
     </div>
   );
 }

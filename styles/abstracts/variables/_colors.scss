@@ -18,16 +18,29 @@ $fond-vert-: #F5FDFFFF;
 $vert: #00412AFF;
 $vert-gradient: #ABEFD7FF;
 
-$ecole: #E5B269FF;
-$ecole-light: #FFFAF2FF;
-$energie: #C4DE78FF;
-$energie-light: #F7FCE7FF;
-$impots: #8CC5C9FF;
-$logement: #DFA68EFF;
-$sante: #90C2E7FF;
-$justice-et-securite: #DBA6DBFF;
-$personnes-agees: #A1A5FFFF;
-$transport: #73D1B0FF;
+$ecole: #E5B269;
+$ecole-light: #FFF2E0;
+
+$energie: #C4DE78;
+$energie-light: #F7FCE7;
+
+$impots: #8CC5C9;
+$impots-light: #ecf9f9;
+
+$logement: #DFA68E;
+$logement-light: #FCEEE9;
+
+$sante: #90C2E7;
+$sante-light: #F1F8FD;
+
+$justice-et-securite: #DBA6DB;
+$justice-et-securite-light: #F2F2FD;
+
+$personnes-agees: #A1A5FF;
+$personnes-agees-light: #EEEEFC;
+
+$transport: #73D1B0;
+$transport-light: #F2FDF9;
 
 $color-dark: #2B2B2B;
 
@@ -42,26 +55,26 @@ $thematiques: (
   ),
   (key: fiscalite,
     color: $impots,
-    color-light: $impots,
+    color-light: $impots-light,
   ),
   (key: justice,
     color: $justice-et-securite,
-    color-light: $justice-et-securite,
+    color-light: $justice-et-securite-light,
   ),
   (key: logement,
     color: $logement,
-    color-light: $logement,
+    color-light: $logement-light,
   ),
   (key: sante,
     color: $sante,
-    color-light: $sante,
+    color-light: $sante-light,
   ),
   (key: securite,
     color: $justice-et-securite,
-    color-light: $justice-et-securite,
+    color-light: $justice-et-securite-light,
   ),
   (key: transports,
     color: $transport,
-    color-light: $transport,
+    color-light: $transport-light,
   ),
 );

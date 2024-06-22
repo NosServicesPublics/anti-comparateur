@@ -14,7 +14,7 @@ export default function ThematiqueCard({ thematique, questions }) {
   return (
     <div className="thematique-card">
       <h2
-        className="thematique-card__title thematique-label"
+        className="thematique-card__title thematique-underlined"
         data-thematique-key={thematiqueKey}
       >
         <Link

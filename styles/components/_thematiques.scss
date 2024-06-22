@@ -1,3 +1,14 @@
+.thematique-underlined {
+  @include with-thematique-color {
+    width: fit-content;
+    background-image: linear-gradient(to right, var(--thematique-color), var(--thematique-color));
+    background-size: 100% 25%;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    line-height: 1.5;
+  }
+}
+
 ul.thematiques-list {
   display: flex;
   list-style: none;
@@ -15,51 +26,35 @@ ul.thematiques-list {
     width: 100%;
     display: block;
     padding: 1rem;
-    font-weight: 800;
     text-align: center;
   }
 
-  p.thematique-label {
+  p.thematique-underlined {
+    font-weight: 800;
     margin: 0 auto;
   }
 }
 
-.thematique-label {
-  @include with-thematique-color {
-    position: relative;
-    z-index: 1;
-    width: fit-content;
-
-    &::before {
-      content: '';
-      display: block;
-      background-color: var(--thematique-color);
-      position: absolute;
-      height: .3em;
-      bottom: .25em;
-      left: 0;
-      right: 0;
-      z-index: -1;
-    }
-  }
-}
 .question-link {
   text-decoration: none;
-  font-weight: 600;
-  & + .question-link {
+  font-weight: 700;
+  font-size: 1.125rem;
+
+  display: flex;
+  gap: .5rem;
+
+  &+.question-link {
     margin-top: 1rem;
   }
 }
 
 .question-link__number {
-  font-size: 1.25em;
   font-weight: 900;
 
   @include with-thematique-color {
     color: var(--thematique-color);
   }
 }
-
 
 .thematique-card {
   padding: 2rem 0;

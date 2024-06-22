@@ -1,0 +1,103 @@
+.question-blocks {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  .question-block {
+    .question-block__title {
+      margin-bottom: 3rem;
+      line-height: 1.125;
+      span {
+        line-height: 1.125;
+      }
+
+      .question-link__number {
+        margin-right: 1.5rem;
+      }
+    }
+
+    .question-block__responses {
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+
+      @include lg {
+        padding: 2rem;
+      }
+
+      margin: -1rem;
+    }
+  }
+}
+
+.response-short-block {
+  flex-basis: 100%;
+  padding: 1rem;
+
+  @include md {
+    flex: 0 0 50%;
+  }
+
+  @include lg {
+    flex: 0 0 25%;
+  }
+
+  .response__author {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .response__author-name {
+    font-weight: 700;
+  }
+
+  .response__abstract {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.125;
+    margin-bottom: 1rem;
+  }
+
+  .response__content {
+    p {
+      font-size: .85rem;
+      font-weight: 400;
+    }
+  }
+
+  .response__details-link {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-decoration: underline;
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.response-details__columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 2rem;
+
+  .response-details__column {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .response-details__block {
+      background: white;
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
