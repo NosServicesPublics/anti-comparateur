@@ -7,8 +7,9 @@ import {
   getThematiqueKey,
   getQuestionNumber,
   formatQuestionNumber,
-  partis,
 } from "@/lib/map";
+
+import { partis } from "@/lib/constants";
 
 export default function QuestionBlock({ thematique, question }) {
   const thematiqueKey = getThematiqueKey(thematique);

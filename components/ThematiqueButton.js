@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   getThematiqueKey,
   getThematiqueName,
-  getThematiqueAppLink,
+  getThematiquePageLink,
 } from "@/lib/map";
 
 export default function ThematiqueButton({ thematique }) {
@@ -12,7 +12,7 @@ export default function ThematiqueButton({ thematique }) {
     <div className="thematique-button">
       <Link
         key={thematiqueKey}
-        href={getThematiqueAppLink(thematique)}
+        href={getThematiquePageLink(thematique)}
       >
         <p
           className="thematique-button__label thematique-underlined"

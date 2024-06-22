@@ -5,10 +5,11 @@ import ThematiquesButtonsGrid from "@/components/ThematiquesButtonsGrid";
 import SiteBanner from "@/components/SiteBanner";
 import TwitterButton from "@/components/TwitterButton";
 
+import { SITE_TITLE } from "@/lib/constants";
+import pickAWinner from "@/lib/twitter";
+
 import thematiquesData from "../data/thematiques.json";
 import questionsData from "../data/questions.json";
-
-import pickAWinner from "@/lib/twitter";
 
 export async function getStaticProps() {
   const [selectedName, selectedPicto] = pickAWinner();
@@ -32,7 +33,7 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Le comparateur des programmes (à renommer)</title>
+        <title>{SITE_TITLE}</title>
       </Head>
       <main>
         <SiteBanner>

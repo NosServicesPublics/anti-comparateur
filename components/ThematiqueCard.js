@@ -4,7 +4,7 @@ import QuestionLink from "@/components/QuestionLink";
 import {
   getThematiqueKey,
   getThematiqueName,
-  getThematiqueAppLink,
+  getThematiquePageLink,
   isQuestionInThematique,
   getQuestionId,
 } from "@/lib/map";
@@ -19,7 +19,7 @@ export default function ThematiqueCard({ thematique, questions }) {
       >
         <Link
           key={getThematiqueKey(thematique)}
-          href={getThematiqueAppLink(thematique)}
+          href={getThematiquePageLink(thematique)}
         >
           {getThematiqueName(thematique)}
         </Link>

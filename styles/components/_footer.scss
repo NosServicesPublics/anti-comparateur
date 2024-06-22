@@ -11,7 +11,7 @@ footer.site-footer {
   @include md {
     flex-direction: row;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
   }
 
   font-size: 1.2rem;

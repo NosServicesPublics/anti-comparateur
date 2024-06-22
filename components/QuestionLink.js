@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import {
   getQuestionName,
-  getQuestionAppLink,
+  getQuestionPageLink,
   getQuestionNumber,
   getThematiqueKey,
   formatQuestionNumber,
@@ -21,7 +21,7 @@ export default function QuestionLink({ thematique, question }) {
         {formatQuestionNumber(getQuestionNumber(question))}
       </span>
       <Link
-        href={getQuestionAppLink(thematique, question)}
+        href={getQuestionPageLink(thematique, question)}
       >
         {getQuestionName(question)}
       </Link>

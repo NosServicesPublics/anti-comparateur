@@ -1,0 +1,48 @@
+.response-details {
+  .response-details__title {
+    margin-top: 2rem;
+  }
+
+  .response-details__columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    gap: 4rem;
+    flex-direction: column;
+
+    @include md {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .response-details__column {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include md {
+        flex: 0 0 50%;
+
+        p {
+          max-width: 300px;
+        }
+      }
+
+      .response-details__column-title {
+        margin-bottom: 1rem;
+      }
+
+      .response-details__block {
+        background: white;
+        padding: 1.5rem;
+
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 400;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

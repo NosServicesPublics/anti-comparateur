@@ -1,6 +1,8 @@
 import Head from "next/head";
 
-import ThematiquesCardsGrid from "@/components/ThematiquesGrid";
+import { SITE_TITLE } from "@/lib/constants";
+
+import ThematiquesCardsGrid from "@/components/ThematiquesCardsGrid";
 
 import thematiquesData from "../data/thematiques.json";
 import questionsData from "../data/questions.json";
@@ -14,11 +16,11 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Home({ thematiques, questions }) {
+export default function ThematiqueListPage({ thematiques, questions }) {
   return (
     <>
       <Head>
-        <title>Le comparateur des programmes (à renommer)</title>
+        <title>{SITE_TITLE}</title>
       </Head>
       <main>
         <section className="main-column">

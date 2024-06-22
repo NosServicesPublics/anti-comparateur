@@ -1,10 +1,16 @@
 import Head from "next/head";
+import Link from "next/link";
+
+import { RiArrowDropRightLine } from "react-icons/ri";
+
+import BackBreadcrumb from "@/components/BackBreadcrumb";
+import ResponseDetailsBlock from "@/components/ResponseDetailsBlock";
+
+import { getPageTitle } from "@/lib/constants";
 
 import thematiquesData from "../../../data/thematiques.json";
 import questionsData from "../../../data/questions.json";
 import reponsesData from "../../../data/reponses.json";
-
-import Link from "next/link";
 
 import {
   map,
@@ -12,15 +18,13 @@ import {
   getQuestionName,
   findThematiqueById,
   findQuestionBySlug,
-  getQuestionAppLink,
+  getQuestionPageLink,
   getResponsePathParams,
   findQuestionReponse,
   getThematiqueKey,
   getResponseAuthor,
-  getResponseAbstract,
-  getResponseContent,
-  getThematiqueAppLink,
-  responseDetailsFields,
+  getResponseAnalysis,
+  getThematiquePageLink,
 } from "@/lib/map.js";
 
 export async function getStaticPaths() {
@@ -43,59 +47,92 @@ export async function getStaticProps({ params }) {
   return { props: { thematique, question, reponse } };
 }
 
+const responseDetailsFields = [
+  {
+    title: <>DANS LE <b>PROGRAMME 2024</b></>,
+    key: "Programme_2024"
+  },
+  {
+    title: <>DANS LE <b>PROGRAMME 2022</b></>,
+    key: "Programme_2022"
+  },
+  {
+    title: <>DANS LES <b>VOTES</b></>,
+    key: "Votes"
+  },
+  {
+    title: <>DANS LES <b>DECLARATIONS</b></>,
+    key: "Declarations"
+  },
+]
+
 export default function ResponsePage({ thematique, question, reponse }) {
   const thematiqueKey = getThematiqueKey(thematique);
   return (
     <>
       <Head>
-        <title>Réponse</title>
+        <title>{getPageTitle('Réponse')}</title>
       </Head>
       <main
         data-thematique-key={thematiqueKey}
       >
         <section className='main-column main-section'>
-          <ul>
+          <ul className='response-breadcrumb'>
             <li>
               <Link href='/'>
                 Accueil
               </Link>
             </li>
+            <RiArrowDropRightLine />
             <li>
-              <Link href={getThematiqueAppLink(thematique)}>
+              <Link href={getThematiquePageLink(thematique)}>
                 <span
+                  className='breadcrumb__thematique-link'
                   data-thematique-key={thematiqueKey}
                 >
                   {getThematiqueName(thematique)}
                 </span>
               </Link>
             </li>
-            <li>
+            <RiArrowDropRightLine />
+            <li
+              className='breadcrumb__question-link'
+            >
               {getQuestionName(question)}
             </li>
           </ul>
           <section className='response-details'>
-            <p><Link href={getQuestionAppLink(thematique, question)}>Retour à la question</Link></p>
-            <h1>Détails pour {getResponseAuthor(reponse)}</h1>
+            <BackBreadcrumb
+              label='Retour à la question'
+              href={getQuestionPageLink(thematique, question)}
+            />
+            <h1
+              className='response-details__title'
+            >
+              Détails pour {getResponseAuthor(reponse)}
+            </h1>
             <div className='response-details__columns'>
               <div className='response-details__column'>
-                {responseDetailsFields.map((f) => {
+                <h2 className='response-details__column-title'>
+                  CE QU&apos;ILS ONT DIT
+                </h2>
+                {responseDetailsFields.map((field) => {
                   return (
-                    <div
-                      className='response-details__block'
-                      key={f.key}>
-                      <h3>{f.name}</h3>
-                      <div>{reponse?.fields[f.key]}</div>
-                    </div>
-                  )
+                    <ResponseDetailsBlock
+                      key={field.key}
+                      title={field.title}
+                      content={reponse?.fields[field.key]}
+                    />
+                  );
                 })}
               </div>
               <div className='response-details__column'>
-                <div className='response-details__block'>
-                  <h3>Analyse</h3>
-                  <div dangerouslySetInnerHTML={{
-                    __html: reponse?.fields.AnalyseHTML,
-                  }} />
-                </div>
+                <h2 className='response-details__column-title'>
+                  L&apos;ANALYSE DE <i>NOS SERVICES PUBLICS</i>
+                </h2>
+                <ResponseDetailsBlock
+                  content={getResponseAnalysis(reponse)}
+                />
               </div>
             </div>
           </section>

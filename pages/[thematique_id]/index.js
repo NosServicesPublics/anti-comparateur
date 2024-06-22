@@ -1,6 +1,9 @@
 import Head from "next/head";
-import Breadcrumb from "@/components/Breadcrumb";
+
+import BackBreadcrumb from "@/components/BackBreadcrumb";
 import QuestionBlock from "@/components/QuestionBlock";
+
+import { getPageTitle } from "@/lib/constants";
 
 import thematiquesData from "../../data/thematiques.json";
 import questionsData from "../../data/questions.json";
@@ -13,8 +16,9 @@ import {
   findThematiqueById,
   getThematiqueQuestions,
   getThematiqueKey,
-  partis,
 } from "@/lib/map";
+
+import { partis } from "@/lib/constants";
 
 export async function getStaticPaths() {
   return {
@@ -56,11 +60,11 @@ export default function ThematiquePage({ thematique, questions }) {
   return (
     <>
       <Head>
-        <title>{name}</title>
+        <title>{getPageTitle(name)}</title>
       </Head>
       <main data-thematique-key={thematiqueKey}>
         <section className="main-column main-section">
-          <Breadcrumb />
+          <BackBreadcrumb />
           <h1>{name}</h1>
           <div className="question-blocks">
             {questions?.map((question) => {
