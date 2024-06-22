@@ -6,10 +6,10 @@ import {
 
 export default function ThematiquesList({ thematiques }) {
   return (
-    <ul className="flex-inline-grid">
+    <ul className="thematiques-buttons-grid">
       {thematiques?.map((thematique) => {
         return (
-          <li className="flex-grid__item"
+          <li className="thematiques-buttons-grid__item"
             key={getThematiqueId(thematique)}
           >
             <ThematiqueButton thematique={thematique} />

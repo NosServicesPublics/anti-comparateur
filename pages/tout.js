@@ -1,12 +1,9 @@
 import Head from "next/head";
 
-import ThematiquesGrid from "@/components/ThematiquesGrid";
-import ThematiquesList from "@/components/ThematiquesList";
-import SiteBanner from "@/components/SiteBanner";
+import ThematiquesCardsGrid from "@/components/ThematiquesGrid";
 
 import thematiquesData from "../data/thematiques.json";
 import questionsData from "../data/questions.json";
-import reponsesData from "../data/reponses.json";
 
 export async function getStaticProps({ params }) {
   return {
@@ -25,7 +22,7 @@ export default function Home({ thematiques, questions }) {
       </Head>
       <main>
         <section className="main-column">
-          <ThematiquesGrid thematiques={thematiques} questions={questions} />
+          <ThematiquesCardsGrid thematiques={thematiques} questions={questions} />
         </section>
       </main>
     </>

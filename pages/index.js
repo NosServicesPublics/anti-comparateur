@@ -1,7 +1,7 @@
 import Head from "next/head";
 
-import ThematiquesGrid from "@/components/ThematiquesGrid";
-import ThematiquesList from "@/components/ThematiquesList";
+import ThematiquesCardsGrid from "@/components/ThematiquesCardsGrid";
+import ThematiquesButtonsGrid from "@/components/ThematiquesButtonsGrid";
 import SiteBanner from "@/components/SiteBanner";
 import TwitterButton from "@/components/TwitterButton";
 
@@ -36,10 +36,10 @@ export default function Home({
       </Head>
       <main>
         <SiteBanner>
-          <ThematiquesList thematiques={thematiques} />
+          <ThematiquesButtonsGrid thematiques={thematiques} />
         </SiteBanner>
         <section className="main-column main-section">
-          <ThematiquesGrid thematiques={thematiques} questions={questions} />
+          <ThematiquesCardsGrid thematiques={thematiques} questions={questions} />
           <TwitterButton
             selectedName={selectedName}
             selectedPicto={selectedPicto}
