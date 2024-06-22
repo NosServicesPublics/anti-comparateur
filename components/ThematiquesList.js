@@ -1,6 +1,4 @@
 import ThematiqueButton from "@/components/ThematiqueButton";
-import FlexGrid from "@/components/FlexGrid";
-import FlexItem from "@/components/FlexItem";
 
 import {
   getThematiqueId,
@@ -8,18 +6,16 @@ import {
 
 export default function ThematiquesList({ thematiques }) {
   return (
-    <>
-      <FlexGrid isInline={true}>
-        {thematiques?.map((thematique) => {
-          return (
-            <FlexItem
-              key={getThematiqueId(thematique)}
-            >
-              <ThematiqueButton thematique={thematique} />
-            </FlexItem>
-          );
-        })}
-    </FlexGrid>
-    </>
+    <ul className="flex-inline-grid">
+      {thematiques?.map((thematique) => {
+        return (
+          <li className="flex-grid__item"
+            key={getThematiqueId(thematique)}
+          >
+            <ThematiqueButton thematique={thematique} />
+          </li>
+        );
+      })}
+    </ul>
   );
 }

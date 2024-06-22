@@ -8,6 +8,10 @@ ul.flex-inline-grid {
 
 ul.flex-grid {
   margin: -1rem;
+
+  @include md {
+    margin: -1.5rem;
+  }
 }
 
 ul.flex-grid li.flex-grid__item {
@@ -20,6 +24,7 @@ ul.flex-grid li.flex-grid__item {
 
   @include lg {
     flex: 0 0 33.3333%;
+    padding: 1.5rem;
   }
 
   @include xl {
@@ -28,7 +33,6 @@ ul.flex-grid li.flex-grid__item {
 }
 
 ul.flex-inline-grid {
-  // gap: 1rem;
   margin: -.5rem;
 }
 

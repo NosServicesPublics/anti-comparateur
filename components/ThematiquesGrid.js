@@ -1,26 +1,24 @@
 import ThematiqueCard from "@/components/ThematiqueCard";
-import FlexGrid from "@/components/FlexGrid";
-import FlexItem from "@/components/FlexItem";
 
 import { getThematiqueId } from "@/lib/map";
 
 export default function ThematiquesGrid({ thematiques, questions }) {
   return (
     <div className="thematiques-grid">
-      <FlexGrid>
+      <ul className="flex-grid">
         {thematiques?.map((thematique) => {
           return (
-            <FlexItem
+            <li className="flex-grid__item"
               key={getThematiqueId(thematique)}
             >
               <ThematiqueCard
                 thematique={thematique}
                 questions={questions}
               />
-            </FlexItem>
+            </li>
           );
         })}
-      </FlexGrid>
+      </ul>
     </div>
   );
 }
