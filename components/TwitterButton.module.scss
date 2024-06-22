@@ -35,6 +35,10 @@ $link-color-hover: rgb(29, 140, 216);
   box-shadow: 0 1rem 2rem 0rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   position: relative;
+  
+  @media screen and (max-width: 800px){
+    flex-direction: column;
+  }
 
   .QuoteChevron {
 
