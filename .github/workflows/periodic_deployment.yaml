@@ -21,6 +21,7 @@ jobs:
         run: ./periodic_build.sh
       - name: Export build
         uses: actions/upload-pages-artifact@v1
+        if: steps.periodic-build.outputs.deployment_required == 'true'
         with:
           path: ./out
   deploy:
