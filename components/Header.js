@@ -16,14 +16,14 @@ export default function Header() {
           />
         </div >
         <div className="site-title">
-          LE COMPARATEUR DE PROGRAMME
+          LE&nbsp;COMPARATEUR DE&nbsp;PROGRAMME
         </div>
       </Link>
       <nav className="site-nav" role="navigation" aria-label="Menu principal">
         <ul>
           <li>
             <Link href="/a-propos">
-              À propos
+              À&nbsp;propos
             </Link>
           </li>
         </ul>
