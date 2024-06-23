@@ -50,19 +50,19 @@ export async function getStaticProps({ params }) {
 const responseDetailsFields = [
   {
     title: <>DANS LE <b>PROGRAMME 2024</b></>,
-    key: "Programme_2024"
+    key: "Programme_2024_HTML"
   },
   {
     title: <>DANS LE <b>PROGRAMME 2022</b></>,
-    key: "Programme_2022"
+    key: "Programme_2022_HTML"
   },
   {
     title: <>DANS LES <b>VOTES</b></>,
-    key: "Votes"
+    key: "Votes_HTML"
   },
   {
     title: <>DANS LES <b>DECLARATIONS</b></>,
-    key: "Declarations"
+    key: "Declarations_HTML"
   },
 ]
 
