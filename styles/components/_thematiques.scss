@@ -9,12 +9,71 @@
   }
 }
 
-ul.thematiques-list {
+ul.thematiques-cards-grid {
   display: flex;
   list-style: none;
   padding: 0;
   flex-wrap: wrap;
-  gap: 1rem;
+  margin: -1rem;
+
+  @include md {
+    margin: -1.5rem;
+  }
+
+  li.thematiques-cards-grid__item {
+    flex-basis: 100%;
+    padding: 1rem;
+
+    @include md {
+      flex: 0 0 50%;
+    }
+
+    @include lg {
+      flex: 0 0 33.3333%;
+      padding: 1.5rem;
+    }
+
+    @include xl {
+      flex: 0 0 25%;
+    }
+  }
+}
+
+.thematique-card {
+  padding: 2rem 0;
+}
+
+ul.thematiques-buttons-grid {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  margin: -.5rem;
+
+  li.thematiques-buttons-grid__item {
+    flex-basis: 100%;
+    padding: .5rem;
+
+    @include sm {
+      flex: 0 0 50%;
+    }
+
+    @include md {
+      flex: 0 0 25%;
+    }
+
+    @include md {
+      flex: 0 0 25%;
+    }
+
+    @include lg {
+      flex: 0 0 12.5%;
+    }
+
+    @include xl {
+      flex: 1;
+    }
+  }
 }
 
 .thematique-button {
@@ -55,8 +114,4 @@ ul.thematiques-list {
   @include with-thematique-color {
     color: var(--thematique-color);
   }
-}
-
-.thematique-card {
-  padding: 2rem 0;
 }
