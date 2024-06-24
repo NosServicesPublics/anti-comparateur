@@ -6,6 +6,12 @@
 
   .question-block {
 
+    .toggler__icon {
+      @include md {
+        display: none;
+      }
+    }
+
     button.question-block__toggler {
       background: none;
       border: none;
