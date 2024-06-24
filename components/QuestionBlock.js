@@ -110,7 +110,7 @@ export default function QuestionBlock({
             thematique={thematique}
           />
         </> : (
-          <Disclosure>
+          <Disclosure defaultOpen={id === expandedId}>
             <DisclosureButton
               className="question-block__toggler"
               onClick={() => setExpandedId(id)}
@@ -121,7 +121,6 @@ export default function QuestionBlock({
               />
             </DisclosureButton>
             <DisclosurePanel
-              open={expandedId === id}
             >
               <DisclosurePanelContent
                 expandedId={expandedId}
