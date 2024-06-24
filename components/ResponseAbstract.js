@@ -6,6 +6,7 @@ import {
   getResponseAuthorName,
   getResponseAbstract,
   getResponseContent,
+  getResponseAbstractColor,
 } from "@/lib/data-mappings";
 
 export default function ResponseAbstract({ thematique, question, reponse }) {
@@ -13,6 +14,7 @@ export default function ResponseAbstract({ thematique, question, reponse }) {
   const reponseAuthor = getResponseAuthorName(reponse);
   const reponseAbstract = getResponseAbstract(reponse);
   const reponseContent = getResponseContent(reponse);
+  const responseAbstractColor = getResponseAbstractColor(reponse);
   return (
     <div
       className="response-short-block"
@@ -25,6 +27,7 @@ export default function ResponseAbstract({ thematique, question, reponse }) {
       </h3>
       <div
         className="response__abstract"
+        data-abstract-key={responseAbstractColor}
       >
         {reponseAbstract}
       </div>

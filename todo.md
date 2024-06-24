@@ -1,17 +1,20 @@
 # Todo
 
+## Fix
+
+- make sure links are shown as links in reponse_id
+- fix 'analyse' delta
+- couleur des abstracts sur la vue détaillée ?
+- liens hypertext en _blank
+
 ## Avant de lancer
 
-- ajouter couleur au titre des thématique dans la page thematique_id
-- ajouter couleur aux partis
-- liens hypertext en _blank
 - passe accessibilité
 - passe SEO
 - passe espacements et typographie
 
 ## Styles
 
-- Implémenter l'accordéon pour les questions en mobile
 - Intégrer les pictos quand c'est prêt
 
 ## Contenus

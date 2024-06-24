@@ -10,3 +10,14 @@
     }
   }
 }
+
+@mixin with-abstract-color {
+  @each $abstract in $abstracts {
+    $key: map-get($abstract, key);
+    $color: map-get($abstract, color);
+    &[data-abstract-key="#{$key}"] {
+      --abstract-color: #{$color};
+      @content;
+    }
+  }
+}

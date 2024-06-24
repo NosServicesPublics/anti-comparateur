@@ -1,6 +1,4 @@
 import { NextSeo } from 'next-seo';
-import Link from "next/link";
-import Script from 'next/script';
 
 import { useState, useEffect } from "react";
 import ResponsePageContent from "@/components/ResponsePageContent";
@@ -21,14 +19,18 @@ export default function PreviewPage() {
       if (!record) {
         return
       }
-      setReponse({id: record.id, fields: record})
-      setThematique({fields: {
-        Slug: record.Thematique_Slug,
-        Nom: record.Thematique
-      }})
-      setQuestion({fields: {
-        Intitule: record.Question
-      }})
+      setReponse({ id: record.id, fields: record })
+      setThematique({
+        fields: {
+          Slug: record.Thematique_Slug,
+          Nom: record.Thematique
+        }
+      })
+      setQuestion({
+        fields: {
+          Intitule: record.Question
+        }
+      })
     })
 
 
@@ -41,10 +43,10 @@ export default function PreviewPage() {
         title={'Réponse'}
       />
       <ResponsePageContent
-          thematique={thematique}
-          question={question}
-          reponse={reponse}
-        />
+        thematique={thematique}
+        question={question}
+        reponse={reponse}
+      />
     </>
   );
 }

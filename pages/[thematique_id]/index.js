@@ -14,6 +14,7 @@ import {
   getThematiqueKey,
   getThematiqueQuestions,
   getQuestionId,
+  sortQuestionsByNumber,
   getThematiqueId,
   getQuestionMapResponses,
   findQuestionMapResponses,
@@ -59,20 +60,21 @@ export default function ThematiquePage({ thematique, questions, responses }) {
           <BackBreadcrumb />
           <h1>{name}</h1>
           <div className="question-blocks">
-            {questions?.map((question) => {
-              const questionId = getQuestionId(question);
-              const questionResponses = findQuestionMapResponses(responses, questionId);
-              return (
-                <QuestionBlock
-                  key={questionId}
-                  question={question}
-                  thematique={thematique}
-                  responses={questionResponses}
-                  expandedId={expandedId}
-                  setExpandedId={setExpandedId}
-                />
-              );
-            })}
+            {questions
+              ?.map((question) => {
+                const questionId = getQuestionId(question);
+                const questionResponses = findQuestionMapResponses(responses, questionId);
+                return (
+                  <QuestionBlock
+                    key={questionId}
+                    question={question}
+                    thematique={thematique}
+                    responses={questionResponses}
+                    expandedId={expandedId}
+                    setExpandedId={setExpandedId}
+                  />
+                );
+              })}
           </div>
         </section>
       </main>

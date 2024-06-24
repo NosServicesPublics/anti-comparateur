@@ -7,7 +7,6 @@ import {
   findQuestion,
   getResponsePathParams,
   findResponse,
-  getThematiqueKey,
 } from "@/lib/data-mappings";
 
 export async function getStaticPaths() {

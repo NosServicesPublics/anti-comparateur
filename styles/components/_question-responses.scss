@@ -74,6 +74,14 @@
   }
 }
 
+
+.response__abstract {
+  @include with-abstract-color {
+    color: var(--abstract-color);
+  }
+}
+
+
 .response-short-block {
   flex-basis: 100%;
   padding: 1rem;

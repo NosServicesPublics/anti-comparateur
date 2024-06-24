@@ -84,21 +84,25 @@ $thematiques: (
   * Authors colors 
   */
 
-$authors: (
+$abstracts: (
   (
-    key: lrem,
-    color: #EBAA3B,
-  ),
-  (
-    key: lr,
-    color: #4193CF,
-  ),
-  (
-    key: nfp,
+    key: rouge,
     color: #D02E2A,
   ),
   (
-    key: rn,
-    color: #5E2715
+    key: vert,
+    color: #1b6727,
+  ),
+  (
+    key: jaune,
+    color: #b37524,
+  ),
+  (
+    key: brun,
+    color: #613424
+  ),
+  (
+    key: noir,
+    color: #000000
   )
 );
