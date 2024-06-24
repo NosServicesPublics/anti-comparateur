@@ -79,3 +79,26 @@ $thematiques: (
     color-light: $transport-light,
   ),
 );
+
+/**
+  * Authors colors 
+  */
+
+$authors: (
+  (
+    key: lrem,
+    color: #EBAA3B,
+  ),
+  (
+    key: lr,
+    color: #4193CF,
+  ),
+  (
+    key: nfp,
+    color: #D02E2A,
+  ),
+  (
+    key: rn,
+    color: #5E2715
+  )
+);

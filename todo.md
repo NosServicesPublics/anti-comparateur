@@ -2,6 +2,7 @@
 
 ## Avant de lancer
 
+- ajouter couleur au titre des thématique dans la page thematique_id
 - ajouter couleur aux partis
 - liens hypertext en _blank
 - passe accessibilité
