@@ -3,11 +3,9 @@ export default function ResponseDetailsBlock({ content, title }) {
   return (
     <div className='response-details__block'>
       {titleTag}
-      <div>
       <div dangerouslySetInnerHTML={{
         __html: content
       }} />
-      </div>
     </div>
   )
 }

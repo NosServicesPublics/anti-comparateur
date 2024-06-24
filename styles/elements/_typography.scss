@@ -25,9 +25,9 @@ p {
 
 h1 {
   font-weight: 900;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   @include sm {
-    font-size: 3rem;
+    font-size: 3.25rem;
   }
   line-height: 1.2; 
 }

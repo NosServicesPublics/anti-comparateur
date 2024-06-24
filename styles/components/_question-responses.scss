@@ -1,5 +1,4 @@
 .question-blocks {
-  margin-top: 3rem;
   display: flex;
   gap: 5rem;
   flex-direction: column;
@@ -34,12 +33,18 @@
         }
       }
     }
+
     .question-block__title {
-      margin-bottom: 3rem;
-      line-height: 1.125;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       display: flex;
       align-items: flex-start;
+      line-height: 1.25;
+      margin-bottom: 2rem;
+
+      @include md {
+        font-size: 1.75rem;
+        margin-bottom: 4rem;
+      }
 
       h2 {
         margin: 0;
@@ -53,6 +58,7 @@
 
       .question-link__number {
         margin-right: .5rem;
+
         @include md {
           margin-right: 1rem;
         }
@@ -63,17 +69,19 @@
       background-color: $bg-light;
       display: flex;
       flex-wrap: wrap;
-      padding: 1rem;
+      margin: -1rem -2rem;
 
-      @include lg {
-        padding: 2rem;
+      @include md {
+        margin: -1.5rem;
       }
 
-      margin: -1rem;
+      @include lg {
+        margin: -1.5rem;
+        padding: 2rem;
+      }
     }
   }
 }
-
 
 .response__abstract {
   @include with-abstract-color {
@@ -81,12 +89,12 @@
   }
 }
 
-
 .response-short-block {
   flex-basis: 100%;
-  padding: 1rem;
+  padding: 2.5rem 2rem;
 
   @include md {
+    padding: 1.5rem;
     flex: 0 0 50%;
   }
 
@@ -104,9 +112,9 @@
   }
 
   .response__abstract {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 700;
-    line-height: 1.125;
+    line-height: 1.25;
     margin-bottom: 1rem;
   }
 

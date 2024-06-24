@@ -23,14 +23,18 @@
 
       @include md {
         flex: 0 0 50%;
-
-        p {
-          max-width: 300px;
-        }
       }
 
       .response-details__column-title {
+        font-size: 1.75rem;
         margin-bottom: 1rem;
+
+        @include md {
+          display: flex;
+          flex-direction: column;
+          min-height: 7rem;
+          justify-content: flex-end;
+        }
       }
 
       .response-details__block {
@@ -38,10 +42,25 @@
         color: $font-color-dark;
         padding: 1.5rem;
 
+        p, li {
+          font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 1rem;
+        }
+
         h3 {
           font-size: 1.25rem;
           font-weight: 400;
           margin-bottom: 1rem;
+        }
+
+        ul, ol {
+          padding-left: 1.5rem;
+          margin-bottom: 1rem;
+
+          li {
+            margin-bottom: .75em;
+          }
         }
       }
     }

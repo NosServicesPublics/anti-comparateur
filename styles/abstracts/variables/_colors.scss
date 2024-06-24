@@ -36,8 +36,11 @@ $logement-light: #FCEEE9;
 $sante: #90C2E7;
 $sante-light: #F1F8FD;
 
-$justice-et-securite: #DBA6DB;
-$justice-et-securite-light: #F2F2FD;
+$justice: #DBA6DB;
+$justice-light: #F2F2FD;
+
+$securite: #A1A5FF;
+$securite-light: #EEEEFC;
 
 $personnes-agees: #A1A5FF;
 $personnes-agees-light: #EEEEFC;
@@ -59,8 +62,8 @@ $thematiques: (
     color-light: $impots-light,
   ),
   (key: justice,
-    color: $justice-et-securite,
-    color-light: $justice-et-securite-light,
+    color: $justice,
+    color-light: $justice-light,
   ),
   (key: logement,
     color: $logement,
@@ -71,8 +74,8 @@ $thematiques: (
     color-light: $sante-light,
   ),
   (key: securite,
-    color: $justice-et-securite,
-    color-light: $justice-et-securite-light,
+    color: $securite,
+    color-light: $securite-light,
   ),
   (key: transports,
     color: $transport,

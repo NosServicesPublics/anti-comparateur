@@ -58,7 +58,12 @@ export default function ThematiquePage({ thematique, questions, responses }) {
       <main data-thematique-key={thematiqueKey}>
         <section className="main-column main-section">
           <BackBreadcrumb />
-          <h1>{name}</h1>
+          <h1
+          className="thematique-title"
+            data-thematique-key={thematiqueKey}
+          >
+            {name}
+          </h1>
           <div className="question-blocks">
             {questions
               ?.map((question) => {

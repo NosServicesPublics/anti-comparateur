@@ -39,10 +39,12 @@ h1.site-banner__title {
 }
 
 .site-banner__baseline {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
+
   @include md {
     font-size: 1.25rem;
   }
+
   font-weight: 400;
 }
 
