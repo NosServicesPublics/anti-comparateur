@@ -1,5 +1,7 @@
 import { NextSeo } from 'next-seo';
 
+import { useState } from "react";
+
 import BackBreadcrumb from "@/components/BackBreadcrumb";
 import QuestionBlock from "@/components/QuestionBlock";
 
@@ -46,6 +48,7 @@ export async function getStaticProps({ params }) {
 export default function ThematiquePage({ thematique, questions, responses }) {
   const name = getThematiqueName(thematique);
   const thematiqueKey = getThematiqueKey(thematique);
+  const [expandedId, setExpandedId] = useState(null);
   return (
     <>
       <NextSeo
@@ -65,6 +68,8 @@ export default function ThematiquePage({ thematique, questions, responses }) {
                   question={question}
                   thematique={thematique}
                   responses={questionResponses}
+                  expandedId={expandedId}
+                  setExpandedId={setExpandedId}
                 />
               );
             })}

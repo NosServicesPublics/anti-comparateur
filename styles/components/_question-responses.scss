@@ -5,6 +5,29 @@
   flex-direction: column;
 
   .question-block {
+
+    button.question-block__toggler {
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      text-align: left;
+
+      position: relative;
+
+      .toggler__icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateY(-100%);
+      }
+
+      &[data-open] {
+        .toggler__icon {
+          transform: translateY(-100%) rotate(180deg);
+        }
+      }
+    }
     .question-block__title {
       margin-bottom: 3rem;
       line-height: 1.125;
