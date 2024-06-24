@@ -68,6 +68,7 @@ function QuestionResponsesAbstracts({ responses, question, thematique }) {
     </div>
   )
 }
+
 export default function QuestionBlock({
   thematique,
   question,
@@ -108,10 +109,7 @@ export default function QuestionBlock({
             thematique={thematique}
           />
         </> : (
-          <Disclosure
-            as="div"
-            open={expandedId === id}
-          >
+          <Disclosure>
             <DisclosureButton
               className="question-block__toggler"
               onClick={() => setExpandedId(id)}
@@ -121,7 +119,9 @@ export default function QuestionBlock({
                 question={question}
               />
             </DisclosureButton>
-            <DisclosurePanel>
+            <DisclosurePanel
+              open={expandedId === id}
+            >
               <DisclosurePanelContent
                 expandedId={expandedId}
                 id={id}
