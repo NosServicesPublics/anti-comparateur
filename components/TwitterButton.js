@@ -15,9 +15,11 @@ export default function TwitterButton(props) {
 
   function twitterContentGenerator() {
     let string =
-      `J'ai comparé les programmes, les discours et les actes des différentes listes aux législatives grâce au comparateur de @nosservicespub !` +
+      `Est-ce qu'il y aura un enseignant devant mon enfant ?` +
+      `Un médecin dans mon territoire ?` +
+      `J’ai comparé les programmes, les discours et les actes des différentes listes aux législatives en ce qui concerne les services publics.` +
       "\n\n" +
-      `N'hésitez pas à faire de même pour être informé avant de voter :` +
+      `Et pour vous, ça change quoi ?` +
       "\n\n" +
       `httpss://comparateur.nosservicespublics.fr`;
 
@@ -28,20 +30,16 @@ export default function TwitterButton(props) {
     return (
       <div className={styles.contentWrapper}>
         <p>
-          J’ai comparé les programmes, les discours et les actes des différentes
-          listes aux législatives grâce au comparateur de{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://x.com/nosservicespub"
-            className={styles.link}
-          >
-            @nosservicespub
-          </a>
-           !
+          Est-ce qu$&apos;il y aura un enseignant devant mon enfant ?
+          <br />
+          Un médecin dans mon territoire ?
         </p>
-        <p>N’hésitez pas à faire de même pour être informé avant de voter :</p>
         <p>
+          J’ai comparé les programmes, les discours et les actes des différentes listes aux législatives en ce qui concerne les services publics.
+        </p>
+        <p>
+          Et pour vous, ça change quoi ?
+          <br />
           <a
             target="_blank"
             rel="noreferrer"
@@ -51,7 +49,7 @@ export default function TwitterButton(props) {
             https://comparateur.nosservicespublics.fr
           </a>
         </p>
-      </div>
+      </div >
     );
   }
 

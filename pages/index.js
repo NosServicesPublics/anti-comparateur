@@ -29,7 +29,7 @@ export default function Home({
   return (
     <>
       <main>
-        <SiteBanner nQuestions={questions.length}>
+        <SiteBanner>
           <ThematiquesButtonsGrid thematiques={thematiques} />
         </SiteBanner>
         <section className="main-column main-section">

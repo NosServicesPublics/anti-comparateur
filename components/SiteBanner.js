@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 
-export default function SiteBanner({ children, nQuestions }) {
+export default function SiteBanner({ children }) {
   return (
     <section className="site-banner main-column">
       <div className="site-banner__image">
@@ -16,10 +16,10 @@ export default function SiteBanner({ children, nQuestions }) {
         />
       </div>
       <h1 className="site-banner__title">
-        Prendre au sérieux la politique, mettre les programmes à l&apos;épreuve
+      Et concrètement ? Les programmes à l’épreuve de vos questions.
       </h1>
       <p className="site-banner__baseline">
-        Vous ne croyez plus aux programmes ? Ça tombe bien, nous non plus ! Découvrez {nQuestions} questions et les réponses des groupes candidats aux élections législatives pour vous faire une vraie idée ce qui vous attend sur les sujets qui comptent pour vous :
+        Les programmes politiques vous paraissent déconnectés ? On les a fait redescendre sur terre. Au travers d’une trentaine de questions concrètes, nous avons passé au crible les propositions de ces élections législatives pour savoir ce qu’elles changeraient pour vous au quotidien :
       </p>
       <div className="site-banner__cta">
         {children}
