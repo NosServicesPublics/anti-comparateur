@@ -12,6 +12,11 @@
   @include sm {
     flex-direction: row;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .site-branding {
