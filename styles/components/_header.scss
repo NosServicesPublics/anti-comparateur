@@ -3,14 +3,15 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  height: $header-height-mobile;
-  
-  @include md {
-    height: $header-height;
+  height: $header-height-xs;
+
+
+  @include xs {
+    flex-direction: row;
   }
 
-  @include sm {
-    flex-direction: row;
+  @include xs {
+    height: $header-height;
   }
 
   a {
@@ -25,21 +26,19 @@
   gap: 1rem;
   padding-top: .75rem;
 
-  @include sm {
+  @include xs {
     padding-top: 0;
     gap: 2rem;
   }
 }
 
 .site-logo {
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-  max-width: 3rem;
-  max-height: 3rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
 
   @include md {
-    min-width: 3rem;
-    min-height: 3rem;
+    min-width: 4rem;
+    min-height: 4rem;
   }
 
   img {

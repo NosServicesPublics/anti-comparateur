@@ -6,7 +6,7 @@
   @include sm {
     font-size: 15px;
   }
-  
+
   @include md {
     font-size: 16px;
   }
@@ -28,10 +28,12 @@ body {
 
 main {
 
-    min-height: calc(100vh - $header-height-mobile);
-    @include md {
-      min-height: calc(100vh - $header-height);
-    } 
+  min-height: calc(100vh - $header-height-xs);
+
+  @include xs {
+    min-height: calc(100vh - $header-height);
+  }
+
   @include with-thematique-color {
     background-color: var(--thematique-color-light);
   }

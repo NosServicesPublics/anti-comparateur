@@ -4,6 +4,11 @@
   @return map.get($breakpoints, $name);
 }
 
+@mixin xs {
+  @media (min-width: breakpoint(xs)) {
+    @content;
+  }
+}
 @mixin sm {
   @media (min-width: breakpoint(sm)) {
     @content;

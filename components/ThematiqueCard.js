@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Img from "next/image";
+
 import QuestionLink from "@/components/QuestionLink";
 
 import {
@@ -10,21 +12,37 @@ import {
   getQuestionId,
 } from "@/lib/data-mappings";
 
+import {
+  getPicto,
+} from "@/lib/icons";
+
 export default function ThematiqueCard({ thematique, questions }) {
   const thematiqueKey = getThematiqueKey(thematique);
+  const picto = getPicto(thematiqueKey, "md");
   return (
     <div className="thematique-card">
-      <h2
-        className="thematique-card__title thematique-underlined"
-        data-thematique-key={thematiqueKey}
-      >
-        <Link
-          key={thematiqueKey}
-          href={getThematiquePageLink(thematique)}
+      <div className="thematique-card__header">
+        <h2
+          className="thematique-card__title thematique-underlined"
+          data-thematique-key={thematiqueKey}
         >
-          {getThematiqueName(thematique)}
-        </Link>
-      </h2>
+          <Link
+            key={thematiqueKey}
+            href={getThematiquePageLink(thematique)}
+          >
+            {getThematiqueName(thematique)}
+          </Link>
+        </h2>
+        {picto ? (
+          <Img
+            className="thematique-card__picto"
+            src={picto}
+            alt=""
+            width={48}
+            height={48}
+          />
+        ) : null}
+      </div>
       <div className="thematique-card__questions">
         {getThematiqueQuestions(questions, getThematiqueId(thematique))
           .map((question) => {
