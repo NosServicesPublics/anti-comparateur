@@ -11,7 +11,7 @@ import {
 
 export async function getStaticPaths() {
   return {
-    paths: data.responses
+    paths: data.responses.filter(responseRecord => responseRecord.fields.Question)
       .map((responseRecord) => {
         return {
           params: getResponsePathParams(responseRecord, data.thematiques, data.questions)
