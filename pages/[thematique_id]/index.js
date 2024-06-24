@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import BackBreadcrumb from "@/components/BackBreadcrumb";
 import QuestionBlock from "@/components/QuestionBlock";
@@ -14,7 +14,6 @@ import {
   getThematiqueKey,
   getThematiqueQuestions,
   getQuestionId,
-  sortQuestionsByNumber,
   getThematiqueId,
   getQuestionMapResponses,
   findQuestionMapResponses,
@@ -50,6 +49,16 @@ export default function ThematiquePage({ thematique, questions, responses }) {
   const name = getThematiqueName(thematique);
   const thematiqueKey = getThematiqueKey(thematique);
   const [expandedId, setExpandedId] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const el = document.querySelector(`#${expandedId}`);
+      if (el) {
+        el.scrollIntoView();
+      }
+    }
+  }, [expandedId]);
+
   return (
     <>
       <NextSeo
@@ -59,7 +68,7 @@ export default function ThematiquePage({ thematique, questions, responses }) {
         <section className="main-column main-section">
           <BackBreadcrumb />
           <h1
-          className="thematique-title"
+            className="thematique-title"
             data-thematique-key={thematiqueKey}
           >
             {name}

@@ -30,7 +30,7 @@ export default function TwitterButton(props) {
     return (
       <div className={styles.contentWrapper}>
         <p>
-          Est-ce qu$&apos;il y aura un enseignant devant mon enfant ?
+          Est-ce qu&apos;il y aura un enseignant devant mon enfant ?
           <br />
           Un médecin dans mon territoire ?
         </p>

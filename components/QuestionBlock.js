@@ -19,6 +19,7 @@ import {
   getResponseId,
   getThematiqueKey,
   getQuestionNumber,
+  getThematiqueId,
   formatQuestionNumber,
   sortResponsesByAuthor,
 } from "@/lib/data-mappings";

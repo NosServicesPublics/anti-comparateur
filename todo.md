@@ -1,10 +1,5 @@
 # Todo
 
-## Fix
-
-- couleur des abstracts sur la vue détaillée ?
-- liens hypertext en _blank
-
 ## Avant de lancer
 
 - passe accessibilité
@@ -13,13 +8,10 @@
 
 ## Styles
 
-- Intégrer les pictos quand c'est prêt
+- MAJ des pictos
 
 ## Contenus
 
 - Définir le titre du site
-- Vérifier les titres des blocs d'analyse (pas les mêmes que dans la maquette et dans grist).
-- vérifier les titres des thématiques (pas les mêmes dans la maquette et dans grist => "justice et sécurité", etc).
-- Définir les libelés des partis (RN ou rassemblement national, etc).
+- Définir les libelés des partis
 - saisir les mentions légales
-- saisir la page à propos
