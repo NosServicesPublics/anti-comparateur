@@ -1,6 +1,6 @@
 import ThematiqueCard from "@/components/ThematiqueCard";
 
-import { getThematiqueId } from "@/lib/map";
+import { getThematiqueId } from "@/lib/data-mappings";
 
 export default function ThematiquesGrid({ thematiques, questions }) {
   return (

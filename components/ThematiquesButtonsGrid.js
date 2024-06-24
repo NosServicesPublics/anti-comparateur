@@ -2,7 +2,7 @@ import ThematiqueButton from "@/components/ThematiqueButton";
 
 import {
   getThematiqueId,
-} from "@/lib/map";
+} from "@/lib/data-mappings";
 
 export default function ThematiquesList({ thematiques }) {
   return (

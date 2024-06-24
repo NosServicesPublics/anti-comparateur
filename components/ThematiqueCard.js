@@ -7,7 +7,7 @@ import {
   getThematiquePageLink,
   isQuestionInThematique,
   getQuestionId,
-} from "@/lib/map";
+} from "@/lib/data-mappings";
 
 export default function ThematiqueCard({ thematique, questions }) {
   const thematiqueKey = getThematiqueKey(thematique);

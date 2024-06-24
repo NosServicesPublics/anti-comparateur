@@ -2,21 +2,20 @@ import ResponseAbstract from "@/components/ResponseAbstract";
 
 import {
   getQuestionName,
-  getQuestionSlug,
+  getQuestionKey,
   getResponseId,
   getThematiqueKey,
   getQuestionNumber,
   formatQuestionNumber,
-} from "@/lib/map";
+  sortResponsesByAuthor,
+} from "@/lib/data-mappings";
 
-import { partis } from "@/lib/constants";
-
-export default function QuestionBlock({ thematique, question }) {
+export default function QuestionBlock({ thematique, question, responses }) {
   const thematiqueKey = getThematiqueKey(thematique);
   return (
     <div
       className="question-block"
-      id={getQuestionSlug(question)}
+      id={getQuestionKey(question)}
     >
       <div className="question-block__title">
         <span
@@ -35,7 +34,9 @@ export default function QuestionBlock({ thematique, question }) {
         </h2>
       </div>
       <div className="question-block__responses">
-        {question.reponses.map((response) => {
+        {responses
+          ?.sort(sortResponsesByAuthor)
+          ?.map((response) => {
           return (
             <ResponseAbstract
               key={getResponseId(response)}

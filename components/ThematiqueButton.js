@@ -4,7 +4,7 @@ import {
   getThematiqueKey,
   getThematiqueName,
   getThematiquePageLink,
-} from "@/lib/map";
+} from "@/lib/data-mappings";
 
 export default function ThematiqueButton({ thematique }) {
   const thematiqueKey = getThematiqueKey(thematique);

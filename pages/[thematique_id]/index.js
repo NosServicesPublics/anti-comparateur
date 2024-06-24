@@ -5,56 +5,46 @@ import QuestionBlock from "@/components/QuestionBlock";
 
 import { getPageTitle } from "@/lib/constants";
 
-import thematiquesData from "../../data/thematiques.json";
-import questionsData from "../../data/questions.json";
-import reponsesData from "../../data/reponses.json";
+import data from "@/lib/data-loader";
 
 import {
+  findThematique,
   getThematiqueName,
-  getQuestionId,
-  getThematiquesPaths,
-  findThematiqueById,
-  getThematiqueQuestions,
+  getThematiquePathParams,
   getThematiqueKey,
-} from "@/lib/map";
-
-import { partis } from "@/lib/constants";
+  getThematiqueQuestions,
+  getQuestionId,
+  getQuestionMapResponses,
+  findQuestionMapResponses,
+} from "@/lib/data-mappings";
 
 export async function getStaticPaths() {
   return {
-    paths: getThematiquesPaths(thematiquesData),
+    paths: data.thematiques
+      .map((thematiqueRecord) => {
+        return {
+          params: getThematiquePathParams(thematiqueRecord)
+        };
+      }),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const thematique = findThematiqueById(thematiquesData, params.thematique_id);
-  const questions = getThematiqueQuestions(questionsData, thematique.id);
+  const thematique = findThematique(data.thematiques, params.thematique_id);
+  const questions = getThematiqueQuestions(data.questions, thematique.id);
+  const responses = getQuestionMapResponses(questions, data.responses)
 
-  const questionsMap = questions.reduce((a, v) => {
-    a[v.id] = v;
-    v.reponses = [];
-    return a;
-  }, {});
-
-  const reponsesMap = reponsesData.records
-    .filter((q) => q.fields.Thematique == thematique.id)
-    .reduce((a, v) => {
-      a[v.fields.Qui] = v;
-      return a;
-    }, {});
-
-  partis.forEach((p) => {
-    if (reponsesMap[p]) {
-      questionsMap[reponsesMap[p].fields.Question].reponses.push(
-        reponsesMap[p]
-      );
+  return {
+    props: {
+      thematique,
+      questions,
+      responses,
     }
-  });
-  return { props: { thematique, questions } };
+  };
 }
 
-export default function ThematiquePage({ thematique, questions }) {
+export default function ThematiquePage({ thematique, questions, responses }) {
   const name = getThematiqueName(thematique);
   const thematiqueKey = getThematiqueKey(thematique);
   return (
@@ -68,11 +58,14 @@ export default function ThematiquePage({ thematique, questions }) {
           <h1>{name}</h1>
           <div className="question-blocks">
             {questions?.map((question) => {
+              const questionId = getQuestionId(question);
+              const questionResponses = findQuestionMapResponses(responses, questionId);
               return (
                 <QuestionBlock
-                  key={getQuestionId(question)}
+                  key={questionId}
                   question={question}
                   thematique={thematique}
+                  responses={questionResponses}
                 />
               );
             })}

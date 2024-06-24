@@ -1,17 +1,16 @@
 import Head from "next/head";
 
-import { SITE_TITLE } from "@/lib/constants";
+import data from "@/lib/data-loader";
 
 import ThematiquesCardsGrid from "@/components/ThematiquesCardsGrid";
 
-import thematiquesData from "../data/thematiques.json";
-import questionsData from "../data/questions.json";
+import { SITE_TITLE } from "@/lib/constants";
 
 export async function getStaticProps({ params }) {
   return {
     props: {
-      thematiques: thematiquesData.records,
-      questions: questionsData.records,
+      thematiques: data.thematiques,
+      questions: data.questions,
     },
   };
 }

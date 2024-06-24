@@ -3,14 +3,14 @@ import Link from "next/link";
 import {
   getResponseId,
   getResponseDetailsLink,
-  getResponseAuthor,
+  getResponseAuthorName,
   getResponseAbstract,
   getResponseContent,
-} from "@/lib/map";
+} from "@/lib/data-mappings";
 
 export default function ResponseAbstract({ thematique, question, reponse }) {
   const reponseId = getResponseId(reponse);
-  const reponseAuthor = getResponseAuthor(reponse);
+  const reponseAuthor = getResponseAuthorName(reponse);
   const reponseAbstract = getResponseAbstract(reponse);
   const reponseContent = getResponseContent(reponse);
   return (

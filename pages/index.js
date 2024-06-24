@@ -8,16 +8,15 @@ import TwitterButton from "@/components/TwitterButton";
 import { SITE_TITLE } from "@/lib/constants";
 import pickAWinner from "@/lib/twitter";
 
-import thematiquesData from "../data/thematiques.json";
-import questionsData from "../data/questions.json";
+import data from "@/lib/data-loader";
 
 export async function getStaticProps() {
   const [selectedName, selectedPicto] = pickAWinner();
 
   return {
     props: {
-      thematiques: thematiquesData.records,
-      questions: questionsData.records,
+      thematiques: data.thematiques,
+      questions: data.questions,
       selectedName,
       selectedPicto,
     },

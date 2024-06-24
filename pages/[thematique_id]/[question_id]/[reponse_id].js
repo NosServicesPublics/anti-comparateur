@@ -3,68 +3,53 @@ import Link from "next/link";
 
 import { RiArrowDropRightLine } from "react-icons/ri";
 
-import BackBreadcrumb from "@/components/BackBreadcrumb";
-import ResponseDetailsBlock from "@/components/ResponseDetailsBlock";
+import data from "@/lib/data-loader";
 
 import { getPageTitle } from "@/lib/constants";
 
-import thematiquesData from "../../../data/thematiques.json";
-import questionsData from "../../../data/questions.json";
-import reponsesData from "../../../data/reponses.json";
+import BackBreadcrumb from "@/components/BackBreadcrumb";
+import ResponseDetailsBlock from "@/components/ResponseDetailsBlock";
 
 import {
-  map,
   getThematiqueName,
   getQuestionName,
-  findThematiqueById,
-  findQuestionBySlug,
+  findThematique,
+  findQuestion,
   getQuestionPageLink,
   getResponsePathParams,
-  findQuestionReponse,
+  findResponse,
   getThematiqueKey,
-  getResponseAuthor,
+  getResponseAuthorName,
   getResponseAnalysis,
+  responseDetailsFields,
   getThematiquePageLink,
-} from "@/lib/map.js";
+} from "@/lib/data-mappings";
 
 export async function getStaticPaths() {
-  const thematiquesMap = map(thematiquesData);
-  const questionsMap = map(questionsData);
   return {
-    paths: reponsesData.records.map((response) => {
-      return {
-        params: getResponsePathParams(response, thematiquesMap, questionsMap)
-      };
-    }),
+    paths: data.responses
+      .map((responseRecord) => {
+        return {
+          params: getResponsePathParams(responseRecord, data.thematiques, data.questions)
+        };
+      }),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const thematique = findThematiqueById(thematiquesData, params.thematique_id)
-  const question = findQuestionBySlug(questionsData, params.question_id);
-  const reponse = findQuestionReponse(reponsesData, question.id, params.reponse_id);
-  return { props: { thematique, question, reponse } };
-}
+  const thematique = findThematique(data.thematiques, params.thematique_id)
+  const question = findQuestion(data.questions, params.question_id);
+  const reponse = findResponse(data.responses, question.id, params.reponse_id);
 
-const responseDetailsFields = [
-  {
-    title: <>DANS LE <b>PROGRAMME 2024</b></>,
-    key: "Programme_2024_HTML"
-  },
-  {
-    title: <>DANS LE <b>PROGRAMME 2022</b></>,
-    key: "Programme_2022_HTML"
-  },
-  {
-    title: <>DANS LES <b>VOTES</b></>,
-    key: "Votes_HTML"
-  },
-  {
-    title: <>DANS LES <b>DECLARATIONS</b></>,
-    key: "Declarations_HTML"
-  },
-]
+  return {
+    props: {
+      thematique,
+      question,
+      reponse
+    }
+  };
+}
 
 export default function ResponsePage({ thematique, question, reponse }) {
   const thematiqueKey = getThematiqueKey(thematique);
@@ -109,7 +94,7 @@ export default function ResponsePage({ thematique, question, reponse }) {
             <h1
               className='response-details__title'
             >
-              Détails pour {getResponseAuthor(reponse)}
+              Détails pour {getResponseAuthorName(reponse)}
             </h1>
             <div className='response-details__columns'>
               <div className='response-details__column'>

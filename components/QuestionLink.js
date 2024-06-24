@@ -6,7 +6,7 @@ import {
   getQuestionNumber,
   getThematiqueKey,
   formatQuestionNumber,
-} from "@/lib/map";
+} from "@/lib/data-mappings";
 
 export default function QuestionLink({ thematique, question }) {
   const thematiqueKey = getThematiqueKey(thematique);
