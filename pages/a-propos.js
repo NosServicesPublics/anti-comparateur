@@ -11,7 +11,7 @@ export default function APropos() {
       <main>
         <section className="main-column main-section">
           <BackBreadcrumb />
-          <h1>À Propos</h1>
+          <h1 id="a-propos">À propos</h1>
           <p>
             Ce comparateur a été conçu par le collectif Nos services publics de manière à éclairer les citoyennes et les citoyens sur les enjeux des élections législatives au regard des services publics.
           </p>
