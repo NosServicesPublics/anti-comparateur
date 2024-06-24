@@ -1,9 +1,7 @@
-import Head from "next/head";
+import { NextSeo } from 'next-seo';
 
 import BackBreadcrumb from "@/components/BackBreadcrumb";
 import QuestionBlock from "@/components/QuestionBlock";
-
-import { getPageTitle } from "@/lib/constants";
 
 import data from "@/lib/data-loader";
 
@@ -50,9 +48,9 @@ export default function ThematiquePage({ thematique, questions, responses }) {
   const thematiqueKey = getThematiqueKey(thematique);
   return (
     <>
-      <Head>
-        <title>{getPageTitle(name)}</title>
-      </Head>
+      <NextSeo
+        title={name}
+      />
       <main data-thematique-key={thematiqueKey}>
         <section className="main-column main-section">
           <BackBreadcrumb />

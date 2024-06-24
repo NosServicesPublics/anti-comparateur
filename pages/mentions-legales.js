@@ -1,15 +1,13 @@
-import Head from "next/head";
+import { NextSeo } from 'next-seo';
 
 import BackBreadcrumb from "@/components/BackBreadcrumb";
-
-import { getPageTitle } from "@/lib/constants";
 
 export default function MentionsLegales() {
   return (
     <>
-      <Head>
-        <title>{getPageTitle('Mentions légales')}</title>
-      </Head>
+      <NextSeo
+        title="Mentions légales"
+      />
       <main>
         <section className="main-column main-section">
         <BackBreadcrumb />

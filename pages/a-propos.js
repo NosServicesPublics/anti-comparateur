@@ -1,15 +1,13 @@
-import Head from "next/head";
-
-import { getPageTitle } from "@/lib/constants";
+import { NextSeo } from 'next-seo';
 
 import BackBreadcrumb from "@/components/BackBreadcrumb";
 
 export default function APropos() {
   return (
     <>
-      <Head>
-        <title>{getPageTitle("À propos")}</title>
-      </Head>
+      <NextSeo
+        title="À propos"
+      />
       <main>
         <section className="main-column main-section">
           <BackBreadcrumb />

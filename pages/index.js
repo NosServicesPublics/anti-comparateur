@@ -1,11 +1,8 @@
-import Head from "next/head";
-
 import ThematiquesCardsGrid from "@/components/ThematiquesCardsGrid";
 import ThematiquesButtonsGrid from "@/components/ThematiquesButtonsGrid";
 import SiteBanner from "@/components/SiteBanner";
 import TwitterButton from "@/components/TwitterButton";
 
-import { SITE_TITLE } from "@/lib/constants";
 import pickAWinner from "@/lib/twitter";
 
 import data from "@/lib/data-loader";
@@ -31,9 +28,6 @@ export default function Home({
 }) {
   return (
     <>
-      <Head>
-        <title>{SITE_TITLE}</title>
-      </Head>
       <main>
         <SiteBanner nQuestions={questions.length}>
           <ThematiquesButtonsGrid thematiques={thematiques} />

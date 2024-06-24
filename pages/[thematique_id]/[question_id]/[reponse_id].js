@@ -1,11 +1,9 @@
-import Head from "next/head";
+import { NextSeo } from 'next-seo';
 import Link from "next/link";
 
 import { RiArrowDropRightLine } from "react-icons/ri";
 
 import data from "@/lib/data-loader";
-
-import { getPageTitle } from "@/lib/constants";
 
 import BackBreadcrumb from "@/components/BackBreadcrumb";
 import ResponseDetailsBlock from "@/components/ResponseDetailsBlock";
@@ -55,9 +53,9 @@ export default function ResponsePage({ thematique, question, reponse }) {
   const thematiqueKey = getThematiqueKey(thematique);
   return (
     <>
-      <Head>
-        <title>{getPageTitle('Réponse')}</title>
-      </Head>
+      <NextSeo
+        title={'Réponse'}
+      />
       <main
         data-thematique-key={thematiqueKey}
       >
