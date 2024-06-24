@@ -1,17 +1,12 @@
 # Todo
 
-## Avant de lancer
-
-- passe accessibilité
-- passe SEO
-- passe espacements et typographie
-
-## Styles
-
+- check accessibilité
+- check SEO
+- check espacements et typographie
 - MAJ des pictos
 
 ## Contenus
 
 - Définir le titre du site
-- Définir les libelés des partis
-- saisir les mentions légales
+- Définir les libelés des partis (aujourd'hui: "LE NOUVEAU FRONT POPULAIRE", "LREM", "LR", "LE RN")
+- Rédiger les mentions légales
