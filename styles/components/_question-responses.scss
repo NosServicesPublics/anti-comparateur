@@ -72,12 +72,12 @@
       margin: -1rem -2rem;
 
       @include md {
-        margin: -1.5rem;
+        margin: -1.5rem 0;
+        padding: 1rem;
       }
 
       @include lg {
-        margin: -1.5rem;
-        padding: 2rem;
+        padding: 1.5rem;
       }
     }
   }
@@ -91,10 +91,10 @@
 
 .response-short-block {
   flex-basis: 100%;
-  padding: 2.5rem 2rem;
+  padding: 2rem;
 
   @include md {
-    padding: 1.5rem;
+    padding: 1rem;
     flex: 0 0 50%;
   }
 
@@ -120,8 +120,14 @@
 
   .response__content {
     p {
-      font-size: .85rem;
       font-weight: 400;
+
+      @include md {
+        font-size: .95rem;
+      }
+      @include lg {
+        font-size: .85rem;
+      }
     }
   }
 

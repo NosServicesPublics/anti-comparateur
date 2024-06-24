@@ -2,8 +2,6 @@
 
 ## Fix
 
-- make sure links are shown as links in reponse_id
-- fix 'analyse' delta
 - couleur des abstracts sur la vue détaillée ?
 - liens hypertext en _blank
 
