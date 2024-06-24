@@ -5,7 +5,8 @@ import {
   getThematiqueKey,
   getThematiqueName,
   getThematiquePageLink,
-  isQuestionInThematique,
+  getThematiqueQuestions,
+  getThematiqueId,
   getQuestionId,
 } from "@/lib/data-mappings";
 
@@ -18,21 +19,20 @@ export default function ThematiqueCard({ thematique, questions }) {
         data-thematique-key={thematiqueKey}
       >
         <Link
-          key={getThematiqueKey(thematique)}
+          key={thematiqueKey}
           href={getThematiquePageLink(thematique)}
         >
           {getThematiqueName(thematique)}
         </Link>
       </h2>
       <div className="thematique-card__questions">
-        {questions
-          .filter((q) => isQuestionInThematique(q, thematique))
-          .map((q) => {
+        {getThematiqueQuestions(questions, getThematiqueId(thematique))
+          .map((question) => {
             return (
               <QuestionLink
-                key={getQuestionId(q)}
+                key={getQuestionId(question)}
                 thematique={thematique}
-                question={q}
+                question={question}
               />
             )
           })}

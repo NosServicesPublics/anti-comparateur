@@ -14,6 +14,7 @@ import {
   getThematiqueKey,
   getThematiqueQuestions,
   getQuestionId,
+  getThematiqueId,
   getQuestionMapResponses,
   findQuestionMapResponses,
 } from "@/lib/data-mappings";
@@ -32,7 +33,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const thematique = findThematique(data.thematiques, params.thematique_id);
-  const questions = getThematiqueQuestions(data.questions, thematique.id);
+  const questions = getThematiqueQuestions(data.questions, getThematiqueId(thematique));
   const responses = getQuestionMapResponses(questions, data.responses)
 
   return {
