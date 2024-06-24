@@ -2,6 +2,8 @@
 
 ## Avant de lancer
 
+- ajouter couleur aux partis
+- liens hypertext en _blank
 - passe accessibilité
 - passe SEO
 - passe espacements et typographie
