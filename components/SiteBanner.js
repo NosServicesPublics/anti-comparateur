@@ -8,7 +8,7 @@ export default function SiteBanner({ children, nQuestions }) {
         <Image
           src="/img/nsp-bg-gradient.jpg"
           aria-hidden
-          alt=""
+          alt="Bannière du site"
           width={1920}
           height={1920}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

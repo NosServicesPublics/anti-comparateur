@@ -1,5 +1,7 @@
-$link-color: rgb(29, 155, 240);
-$link-color-hover: rgb(29, 140, 216);
+$x-blue: $nsp-primary;
+$x-blue-dark: #06649f;
+$x-dark: #14171A;
+$x-gray: #657786;
 
 .mockupTweetWrapper {
   display: flex;
@@ -15,6 +17,7 @@ $link-color-hover: rgb(29, 140, 216);
 }
 
 .title {
+  color: $font-color-dark;
   text-align: center;
   font-size: 2.75rem;
   font-weight: 700;
@@ -31,7 +34,7 @@ $link-color-hover: rgb(29, 140, 216);
   max-width: 40rem;
   margin: 0 auto;
   padding: 2rem;
-  background: white;
+  background: $bg-light;
   box-shadow: 0 1rem 2rem 0rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   position: relative;
@@ -41,10 +44,9 @@ $link-color-hover: rgb(29, 140, 216);
   }
 
   .QuoteChevron {
-
+    opacity: 0.4;
     position: absolute;
     z-index: -1;
-
     width: 8rem;
     height: 8rem;
 
@@ -54,7 +56,7 @@ $link-color-hover: rgb(29, 140, 216);
     }
 
     svg {
-      fill: #558c85;
+      fill: $nsp-primary;
     }
 
     &.topLeft {
@@ -77,17 +79,21 @@ $link-color-hover: rgb(29, 140, 216);
   white-space: pre-wrap;
 
   .link {
-    color: $link-color;
+    color: $x-blue;
+
+    &:hover {
+      color: $x-blue-dark;
+    }
   }
 
   .profileName {
-    color: rgb(15, 20, 25);
+    color: $x-dark;
     font-weight: 700;
     margin-right: 0.5rem;
   }
 
   .profileHandle {
-    color: rgb(83, 100, 113);
+    color: $x-gray;
   }
 
   .header {
@@ -110,14 +116,16 @@ $link-color-hover: rgb(29, 140, 216);
   align-self: flex-end;
   display: inline-flex;
   align-items: center;
-  background-color: $link-color;
   border-radius: 1.75rem;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.025em;
   padding: .75rem 1.75rem;
-  color: white;
+  color: $bg-light;
+  background-color: $x-blue;
+  box-shadow: 0 0.5rem 1rem 0rem rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: $link-color-hover;
+    background-color: $x-blue-dark;
   }
 }

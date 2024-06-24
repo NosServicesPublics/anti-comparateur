@@ -1,22 +1,25 @@
-$charte: #00b794;
-$white: #ffffff;
-$noir: #000000;
+/**
+  * Base colors
+  */
 
-$rouge: #c20000;
-$orange: #b44b00;
-$bleu: #5b5ee8;
+$nsp-white: #ffffff;
+$nsp-black: #000000;
+$nsp-primary: #06708EFF;
+$nsp-grey: #636363FF;
 
-$vert-allegee: #e9fefa;
-$bleu-allege: #d7d8ff;
-$rouge-allege: #f5c6c6;
-$orange-allegee: #fbd6bc;
+/**
+  * Functionnal tokens
+  */
 
-/* Variables  */
-$nsp: #06708EFF;
-$gris-nsp: #636363FF;
-$fond-vert-: #F5FDFFFF;
-$vert: #00412AFF;
-$vert-gradient: #ABEFD7FF;
+$font-color-dark: $nsp-black;
+$font-color-light: $nsp-white;
+
+$bg-light: $nsp-white;
+$bg-dark: #2B2B2B;
+
+/**
+  * Thematiques colors
+  */
 
 $ecole: #E5B269;
 $ecole-light: #FFF2E0;
@@ -41,8 +44,6 @@ $personnes-agees-light: #EEEEFC;
 
 $transport: #73D1B0;
 $transport-light: #F2FDF9;
-
-$color-dark: #2B2B2B;
 
 $thematiques: (
   (key: education,

@@ -38,7 +38,7 @@ export default function TwitterButton(props) {
           >
             @nosservicespub
           </a>
-          !
+           !
         </p>
         <p>N’hésitez pas à faire de même pour être informé avant de voter :</p>
         <p>
@@ -61,7 +61,13 @@ export default function TwitterButton(props) {
         <span>Je partage ce comparateur</span>
       </h3>
       <div className={styles.mockupTweet}>
-        <Img src={props.selectedPicto} width={48} height={48} />
+        <Img
+          aria-hidden
+          alt="Avatar twitter"
+          src={props.selectedPicto}
+          width={48}
+          height={48}
+        />
         <div className={styles.mockupTweetContent}>
           <p className={styles.header}>
             <span className={styles.profileName}>{props.selectedName}</span>
@@ -71,11 +77,11 @@ export default function TwitterButton(props) {
           </p>
           <FormattedTwitterMessage />
           <div className={`${styles.QuoteChevron} ${styles.topLeft}`}>
-        <Icons.QuoteChevron  />
-      </div>
-      <div className={`${styles.QuoteChevron} ${styles.bottomRight}`}>
-        <Icons.QuoteChevron  />
-      </div>
+            <Icons.QuoteChevron />
+          </div>
+          <div className={`${styles.QuoteChevron} ${styles.bottomRight}`}>
+            <Icons.QuoteChevron />
+          </div>
         </div>
       </div>
       <div className={styles.SocialsButtonsRow}>

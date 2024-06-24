@@ -78,10 +78,10 @@ ul.thematiques-buttons-grid {
 
 .thematique-button {
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: $bg-light;
 
   a {
-    color: black;
+    color: $font-color-dark;
     width: 100%;
     display: block;
     padding: 1rem;
