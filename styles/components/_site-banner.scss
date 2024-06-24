@@ -1,7 +1,10 @@
-$banner-url: '/img/nsp-bg-gradient.jpg';
 .site-banner {
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: white;
   padding-top: 4rem;
   padding-bottom: 4rem;
 
@@ -14,13 +17,21 @@ $banner-url: '/img/nsp-bg-gradient.jpg';
     padding-top: 8rem;
     padding-bottom: 8rem;
   }
+}
 
-  background: url($banner-url) no-repeat center center;
-  background-size: cover;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.site-banner__image {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .site-banner__baseline {

@@ -1,6 +1,20 @@
-function SiteBanner({ children, nQuestions }) {
-  return ( 
+
+import Image from 'next/image';
+
+export default function SiteBanner({ children, nQuestions }) {
+  return (
     <section className="site-banner main-column">
+      <div className="site-banner__image">
+        <Image
+          src="/img/nsp-bg-gradient.jpg"
+          aria-hidden
+          alt=""
+          width={1920}
+          height={1920}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority
+        />
+      </div>
       <h1 className="site-banner__title">
         Prendre au sérieux la politique, mettre les programmes à l&apos;épreuve
       </h1>
@@ -11,7 +25,5 @@ function SiteBanner({ children, nQuestions }) {
         {children}
       </div>
     </section>
-    );
+  );
 }
-
-export default SiteBanner;
