@@ -6,6 +6,9 @@
   .question-block {
 
     .toggler__icon {
+      svg {
+        fill: $font-color-dark !important;
+      }
       @include md {
         display: none;
       }
