@@ -6,7 +6,7 @@ export default function SiteBanner({ children }) {
     <section className="site-banner main-column">
       <div className="site-banner__image">
         <Image
-          src="/img/nsp-bg-gradient.jpg"
+          src="/img/nsp-gradient-min.jpg"
           aria-hidden
           alt="Bannière du site"
           width={1920}
