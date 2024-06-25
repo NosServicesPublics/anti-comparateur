@@ -2,6 +2,8 @@ import { NextSeo } from 'next-seo';
 
 import BackBreadcrumb from "@/components/BackBreadcrumb";
 
+import { RiDownload2Line, RiExternalLinkLine } from 'react-icons/ri';
+
 export default function APropos() {
   return (
     <>
@@ -24,6 +26,21 @@ export default function APropos() {
           <p>
             Il sera mis à jour dès lors que de nouvelles propositions ou déclarations le rendront nécessaire.
           </p>
+          <h2>Synthèse de l&apos;étude</h2>
+          <div className="download-link">
+            <a href="/docs/[Synthèse - Comparaison des programmes des législatives 2024].pdf" download>Télécharger la synthèse</a>
+            <RiDownload2Line />
+          </div>
+          <h2>Méthodologie</h2>
+          <div className="download-link">
+            <a href="/docs/NSP - Méthodologie du comparateur de programmes 2024.docx.pdf" download>Télécharger la méthodologie</a>
+            <RiDownload2Line />
+          </div>
+          <h2>Je rejoins le collectif</h2>
+          <div className="cta-link">
+            <a href="https://nosservicespublics.fr/nous-rejoindre" target="_blank" rel="noopener noreferrer">Rejoindre le collectif Nos services publics.</a>
+            <RiExternalLinkLine />
+          </div>
         </section>
       </main>
     </>

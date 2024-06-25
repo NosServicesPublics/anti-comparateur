@@ -69,3 +69,16 @@ p {
 a {
   color: $nsp-primary;
 }
+
+.download-link, .cta-link {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-underline-offset: .2rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  svg {
+    fill: $nsp-primary;
+  }
+}
