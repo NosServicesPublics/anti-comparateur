@@ -5,7 +5,6 @@
   align-items: stretch;
   height: $header-height-xs;
 
-
   @include xs {
     flex-direction: row;
   }
@@ -33,12 +32,12 @@
 }
 
 .site-logo {
-  min-width: 3.5rem;
-  min-height: 3.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
 
   @include md {
-    min-width: 4rem;
-    min-height: 4rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   img {
