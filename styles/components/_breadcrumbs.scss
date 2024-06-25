@@ -22,6 +22,7 @@
 ul.response-breadcrumb {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: .5rem;
   font-weight: 600;
   align-items: center;
@@ -32,6 +33,8 @@ ul.response-breadcrumb {
   svg {
     vertical-align: sub;
     padding-top: 3px;
+    min-width: 1.5em;
+    min-height: 1.5em;
     width: 1.5em;
     height: 1.5em;
   }
