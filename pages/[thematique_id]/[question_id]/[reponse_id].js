@@ -5,13 +5,15 @@ import ResponsePageContent from "@/components/ResponsePageContent";
 import {
   findThematique,
   findQuestion,
+  getResponseQuestionId,
   getResponsePathParams,
   findResponse,
 } from "@/lib/data-mappings";
 
 export async function getStaticPaths() {
   return {
-    paths: data.responses.filter(responseRecord => responseRecord.fields.Question)
+    paths: data.responses
+      .filter(getResponseQuestionId)
       .map((responseRecord) => {
         return {
           params: getResponsePathParams(responseRecord, data.thematiques, data.questions)
@@ -41,11 +43,11 @@ export default function ResponsePage({ thematique, question, reponse }) {
       <NextSeo
         title={'Réponse'}
       />
-        <ResponsePageContent
-          thematique={thematique}
-          question={question}
-          reponse={reponse}
-        />
+      <ResponsePageContent
+        thematique={thematique}
+        question={question}
+        reponse={reponse}
+      />
     </>
   );
 }

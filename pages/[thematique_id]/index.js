@@ -58,12 +58,14 @@ export default function ThematiquePage({ thematique, questions, responses }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const el = document.querySelector(`#${expandedId}`);
-      if (el) {
-        el.scrollIntoView({
-          behavior: "smooth"
-        });
-      }
+      setTimeout(() => {
+        const el = document.querySelector(`#${expandedId}`);
+        if (el) {
+          el.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }, 200)
     }
   }, [expandedId]);
 

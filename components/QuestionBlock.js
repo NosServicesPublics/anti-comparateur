@@ -19,7 +19,6 @@ import {
   getResponseId,
   getThematiqueKey,
   getQuestionNumber,
-  getThematiqueId,
   formatQuestionNumber,
   sortResponsesByAuthor,
 } from "@/lib/data-mappings";
@@ -110,7 +109,9 @@ export default function QuestionBlock({
             thematique={thematique}
           />
         </> : (
-          <Disclosure defaultOpen={id === expandedId}>
+          <Disclosure
+            defaultOpen={id === expandedId}
+          >
             <DisclosureButton
               className="question-block__toggler"
               onClick={() => setExpandedId(id)}
@@ -120,8 +121,7 @@ export default function QuestionBlock({
                 question={question}
               />
             </DisclosureButton>
-            <DisclosurePanel
-            >
+            <DisclosurePanel>
               <DisclosurePanelContent
                 expandedId={expandedId}
                 id={id}
