@@ -6,13 +6,13 @@ export default function SiteBanner({ children }) {
     <section className="site-banner main-column">
       <div className="site-banner__image">
         <Image
+          priority
           src="/img/nsp-gradient-min.jpg"
           aria-hidden
           alt="Bannière du site"
           width={1920}
           height={1920}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority
         />
       </div>
       <h1 className="site-banner__title">

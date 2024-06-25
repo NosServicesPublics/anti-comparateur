@@ -9,6 +9,7 @@ export default function Header() {
       <Link className="site-branding" href="/">
         <div className="site-logo" >
           <Image
+            priority
             src={logoSrc}
             alt="Logo du collectif Nos services publics"
             width={72}

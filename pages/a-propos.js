@@ -41,6 +41,8 @@ export default function APropos() {
             <a href="https://nosservicespublics.fr/nous-rejoindre" target="_blank" rel="noopener noreferrer">Rejoindre le collectif Nos services publics.</a>
             <RiExternalLinkLine />
           </div>
+          <br />
+          <br />
         </section>
       </main>
     </>
