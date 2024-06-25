@@ -140,11 +140,7 @@ ul.thematiques-buttons-grid {
     }
 
     @include md {
-      flex: 0 0 25%;
-    }
-
-    @include md {
-      flex: 0 0 25%;
+      flex: 0 0 33.3333%;
     }
 
     @include lg {
@@ -181,7 +177,7 @@ ul.thematiques-buttons-grid {
 
     flex-direction: row-reverse;
 
-    @include md {
+    @include lg {
       flex-direction: row;
     }
   }
