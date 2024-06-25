@@ -6,7 +6,9 @@ import Script from 'next/script';
 export default function Document() {
   return (
     <Html lang="fr">
-      <Head></Head>
+      <Head>
+        <script defer data-domain="comparateur.nosservicespublics.fr" src="https://plausible.io/js/script.js"></script>
+      </Head>
       <body>
         <Header />
         <Main />
