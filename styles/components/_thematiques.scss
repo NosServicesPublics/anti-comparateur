@@ -12,6 +12,8 @@ h1.thematique-title {
 }
 
 .thematique-underlined {
+  color: $font-color-dark !important;
+  
   @include with-thematique-color {
     width: fit-content;
     background-image: linear-gradient(to right, var(--thematique-color), var(--thematique-color));
