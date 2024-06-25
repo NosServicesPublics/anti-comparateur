@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://comparateur.nosservicespublics.fr/
+
+# Sitemaps
+Sitemap: https://comparateur.nosservicespublics.fr/sitemap.xml
