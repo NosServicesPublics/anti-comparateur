@@ -21,6 +21,9 @@ $bg-dark: #2B2B2B;
   * Thematiques colors
   */
 
+$autonomie: #A1A5FF;
+$autonomie-light: #F4F4FF;
+
 $ecole: #E5B269;
 $ecole-light: #FFFAF2;
 
@@ -42,13 +45,14 @@ $justice-light: #FEF7FE;
 $securite: #A1A5FF;
 $securite-light: #EEEEFC;
 
-$personnes-agees: #A1A5FF;
-$personnes-agees-light: #F4F4FF;
-
 $transport: #73D1B0;
 $transport-light: #EFFFFA;
 
 $thematiques: (
+  (key: autonomie,
+    color: $autonomie,
+    color-light: $autonomie-light,
+  ),
   (key: education,
     color: $ecole,
     color-light: $ecole-light,
