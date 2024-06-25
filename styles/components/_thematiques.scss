@@ -3,6 +3,7 @@
   align-items: center;
   gap: 1.5rem;
   margin-top: 2rem;
+  margin-bottom: 3rem;
 
   @include md {
     margin-top: 4rem;
@@ -84,7 +85,7 @@ ul.thematiques-cards-grid {
     .thematique-picto {
       width: 2.5rem;
       height: 2.5rem;
-      transform: scale(1.75);
+      transform: scale(1.5);
 
       @include md {
         transform: scale(1.5);
