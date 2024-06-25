@@ -18,7 +18,6 @@ import {
 
 export default function ThematiqueCard({ thematique, questions }) {
   const thematiqueKey = getThematiqueKey(thematique);
-  const picto = getPicto(thematiqueKey, "md");
   return (
     <div className="thematique-card">
       <div className="thematique-card__header">
@@ -33,15 +32,7 @@ export default function ThematiqueCard({ thematique, questions }) {
             {getThematiqueName(thematique)}
           </Link>
         </h2>
-        {picto ? (
-          <Img
-            className="thematique-card__picto"
-            src={picto}
-            alt=""
-            width={48}
-            height={48}
-          />
-        ) : null}
+        {getPicto(thematiqueKey)}
       </div>
       <div className="thematique-card__questions">
         {getThematiqueQuestions(questions, getThematiqueId(thematique))

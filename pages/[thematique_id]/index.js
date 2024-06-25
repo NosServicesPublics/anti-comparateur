@@ -19,6 +19,8 @@ import {
   findQuestionMapResponses,
 } from "@/lib/data-mappings";
 
+import { getPicto } from "@/lib/icons";
+
 export async function getStaticPaths() {
   return {
     paths: data.thematiques
@@ -77,12 +79,15 @@ export default function ThematiquePage({ thematique, questions, responses }) {
       <main data-thematique-key={thematiqueKey}>
         <section className="main-column main-section">
           <BackBreadcrumb />
-          <h1
-            className="thematique-title"
-            data-thematique-key={thematiqueKey}
-          >
-            {name}
-          </h1>
+          <div className="thematique-header">
+            <h1
+              className="thematique-title"
+              data-thematique-key={thematiqueKey}
+            >
+              {name}
+            </h1>
+            {getPicto(thematiqueKey)}
+          </div>
           <div className="question-blocks">
             {questions
               ?.map((question) => {

@@ -13,7 +13,6 @@ import {
 
 export default function ThematiqueButton({ thematique }) {
   const thematiqueKey = getThematiqueKey(thematique);
-  const picto = getPicto(thematiqueKey, "sm");
   return (
     <div className="thematique-button">
       <Link
@@ -27,13 +26,7 @@ export default function ThematiqueButton({ thematique }) {
         >
           {getThematiqueName(thematique)}
         </p>
-        {picto ? (
-          <Img
-            className="thematique-button__picto"
-            src={picto}
-            alt=""
-          />
-        ) : null}
+        {getPicto(thematiqueKey)}
       </Link>
     </div>
   );
