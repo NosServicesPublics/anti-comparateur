@@ -56,12 +56,16 @@ function QuestionResponsesAbstracts({ responses, question, thematique }) {
         ?.sort(sortResponsesByAuthor)
         ?.map((response) => {
           return (
-            <ResponseAbstract
+            <div
+              className="grid-item"
               key={getResponseId(response)}
-              reponse={response}
-              question={question}
-              thematique={thematique}
-            />
+            >
+              <ResponseAbstract
+                reponse={response}
+                question={question}
+                thematique={thematique}
+              />
+            </div>
           )
         }
         )}

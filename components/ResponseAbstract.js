@@ -23,7 +23,9 @@ export default function ResponseAbstract({ thematique, question, reponse }) {
       <h3
         className="response__author"
       >
-        SELON <span className="response__author-name">{reponseAuthor.toUpperCase()}</span>
+        <span>
+          SELON <span className="response__author-name">{reponseAuthor.toUpperCase()}</span>
+        </span>
       </h3>
       <div
         className="response__abstract"
