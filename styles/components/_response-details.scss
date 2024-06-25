@@ -43,9 +43,13 @@
         padding: 1.5rem;
 
         p, li {
-          font-size: 1rem;
           font-weight: 400;
           margin-bottom: 1rem;
+          font-size: 1.125rem;
+
+          @include md {
+            font-size: 1rem;
+          }
         }
 
         h3 {
