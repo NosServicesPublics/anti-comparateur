@@ -1,9 +1,9 @@
 name: Automatic periodic deployment to github pages
 on:
   workflow_dispatch:
-  schedule:
-    # https://crontab.guru/#20,50_*_*_*_*
-    - cron: "20,50 * * * *"
+  # schedule:
+  #   # https://crontab.guru/#20,50_*_*_*_*
+  #   - cron: "20,50 * * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
